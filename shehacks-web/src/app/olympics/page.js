@@ -1,28 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+
+export default function Olympics_Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[url('/images/background_main.png')] bg-cover bg-center overflow-y-auto">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           src="/images/bigLogo.png"
           alt="Next.js logo"
-          width={700}
-          height={700}
+          width={400}
+          height={400}
           priority
         />
-        <Link href="/olympics">Hacker Olympics {"-->"}</Link>
+        <Link href="/">Shehacks Main {"-->"}</Link>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
-            This is the main homepage. Get started by editing{" "}
+            This is Hacker Olympics page. Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
+              src/app/olympics/page.js
             </code>
             .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
           </li>
         </ol>
 
