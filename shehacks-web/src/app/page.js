@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import About from "../app/components/about";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[url('/images/background_main.png')] bg-cover bg-center overflow-y-auto">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-centre">
         <Image
           src="/images/bigLogo.png"
           alt="Shehacks X Logo"
@@ -12,7 +13,13 @@ export default function Home() {
           height={700}
           priority
         />
+       <section id="about" className="w-full mt-12">
+          <About />
+        </section>
         <Link href="/olympics">Hacker Olympics {"-->"}</Link>
+        <div className="w-full mt-12">
+      </div>
+    
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
