@@ -3,16 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 /** knobs */
-const CAMERA  = { width: 520, height: 380 };
-const BOTTOM  = -140;   
-const RESERVE = 120; 
+const CAM_DESIGN = { width: 520, height: 380 }; // aspect ~1.368
+const CAM_W_CLAMP = "clamp(260px, 26vw, 520px)";   // ≥sm width range
+const PB_CLAMP    = "clamp(220px, 28vw, 420px)";   // bottom padding to avoid cropping
+const BOTTOM_CLAMP = "calc(-1 * clamp(70px, 8vw, 140px))"; // dip below content
 
 export default function Olympics() {
   return (
     <section
       id="olympics"
       className="relative scroll-mt-28 pt-12 md:pt-10"
-      style={{ paddingBottom: `${CAMERA.height + RESERVE}px` }}
+      style={{ paddingBottom: PB_CLAMP }}
     >
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className="relative inline-block">
@@ -46,23 +47,46 @@ export default function Olympics() {
               aria-hidden
               width={120}
               height={120}
-              className="pointer-events-none select-none absolute -right-8 top-16 sm:top-20 w-14 sm:w-16 h-auto"
+              className="
+                pointer-events-none select-none absolute
+                -right-8 top-16 sm:top-20
+                w-[clamp(40px,6vw,120px)]  /* scales with screen size */
+                h-auto
+              "
               priority
             />
           </div>
         </div>
       </div>
 
+      {/* MOBILE: camera centered, not absolute (no cropping) */}
+      <div className="sm:hidden mt-10 flex justify-center">
+        <Image
+          src="/images/camera.png"
+          alt="Digital camera"
+          width={CAM_DESIGN.width}
+          height={CAM_DESIGN.height}
+          priority
+          className="pointer-events-none select-none w-[min(88vw,420px)] h-auto"
+        />
+      </div>
+
+      {/* DESKTOP/TABLET: camera absolute; auto-center at <= 880px */}
       <Image
         src="/images/camera.png"
         alt="Digital camera"
-        width={CAMERA.width}
-        height={CAMERA.height}
+        width={CAM_DESIGN.width}
+        height={CAM_DESIGN.height}
         priority
-        className="pointer-events-none select-none absolute z-0"
+        className="
+          hidden sm:block pointer-events-none select-none absolute z-0 h-auto
+          max-[880px]:left-1/2 max-[880px]:-translate-x-1/2 max-[880px]:right-auto
+        "
         style={{
-          right: "calc((100vw - 1440px) / 2 + 24px)",
-          bottom: `${BOTTOM}px`, //
+          // default desktop anchoring to the right (ignored when <=880px by the classes above)
+          right: `max(16px, calc((100vw - 1440px) / 2 + 24px))`,
+          bottom: BOTTOM_CLAMP,
+          width: CAM_W_CLAMP, // responsive width; height follows
         }}
       />
     </section>
