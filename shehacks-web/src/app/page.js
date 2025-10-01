@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "./components/faq";
 
 export default function Home() {
   return (
@@ -13,6 +14,10 @@ export default function Home() {
           priority
         />
         <Link href="/olympics">Hacker Olympics {"-->"}</Link>
+
+        {/* FAQ SECTION */}
+        <Faq />
+
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
