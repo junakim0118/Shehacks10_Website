@@ -19,8 +19,6 @@ export default function Home() {
         <Landing />
 
         <section id="about" className="scroll-mt-28 py-24">
-          <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-          <p>Our Mission, 3DS, Graphs</p>
           <About />
         </section>
 

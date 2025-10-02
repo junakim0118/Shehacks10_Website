@@ -8,35 +8,42 @@ export default function About() {
   
   <div className="relative w-full max-w-[1200px] px-4" >
     {/* Chrome frame */}
+    <div className="relative w-full max-w-[1200px] px-4"
+    style={{
+              top: "0%",    // push down from the top
+              left: "35%",  // center horizontally
+              transform: "translateX(-50%)", // correct centering
+            }}>
     <Image
-      src="/images/missioin-statement-chrome.png"
+      src="/images/mission-statement-frame.png"
       alt="Our Mission section"
-      width={3000}
-      height={3000}
-      className="w-full h-auto object-contain select-none pointer-events-none"
+      width={965}
+      height={809}
+      className="object-contain select-none pointer-events-none"
       priority
     />
     <h2
             className="absolute text-white text-2xl sm:text-3xl font-bold"
             style={{
-              top: "15%",    // push down from the top
-              left: "30%",  // center horizontally
+              top: "2%",    // push down from the top
+              left: "34%",  // center horizontally
               transform: "translateX(-50%)", // correct centering
             }}
           >
             Our Mission
           </h2>
     <p
-            className="absolute text-white text-sm sm:text-lg font-medium max-w-[600px] text-center"
+            className="absolute text-white text-sm sm:text-lg font-medium max-w-[500px] text-left"
             style={{
-              top: "35%",    // push down from the top
-              left: "40%",  // center horizontally
-              transform: "translateX(-50%)", // correct centering
+              top: "18%",    // push down from the top
+              left: "27%",  // center horizontally
             }}
           >
-            Empowering women through technology
-          </p>
+            Our vision is to enhance inclusivity by inviting participants from diverse faculties and programs, transcending the typical hackathon experience. We aim to create a supportive community, fostering meaningful connections in tech.
 
+SheHacks+ is dedicated to empowering women and non-binary individuals to grow as innovators, fostering leadership and creativity in a traditionally underrepresented industry. We provide support through building, innovating, and connecting with experts beyond the classroom. 
+          </p>
+</div>
     <Image
       src="/images/star.png"
       alt="Star decoration"
