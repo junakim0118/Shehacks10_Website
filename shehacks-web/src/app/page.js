@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import About from "../app/components/about";
@@ -25,9 +24,9 @@ export default function Home() {
         <section id="sponsor" className="scroll-mt-28 py-24">
           <h2 className="text-3xl font-bold mb-4">Sponsors</h2>
         </section>
-        
-        <Winners />            {/* has id="winners" inside */}
-        <Olympics />    {/* has id="olympics" inside */}
+
+        <Winners /> {/* has id="winners" inside */}
+        <Olympics /> {/* has id="olympics" inside */}
 
         <section id="community" className="scroll-mt-28 py-24">
           <h2 className="text-3xl font-bold mb-4">History</h2>
@@ -38,8 +37,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">FAQ</h2>
           <p>Placeholder content.</p>
         </section>
-
-
+        
       </main>
 
       {/* Footer socials */}
