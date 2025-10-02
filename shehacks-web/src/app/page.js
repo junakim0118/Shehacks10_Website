@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import About from "../app/components/about";
+import History from "../app/components/history";
 
 import Faq from "./components/faq";
 
@@ -19,6 +20,10 @@ export default function Home() {
 
         <section id="about" className="scroll-mt-28 py-24">
           <About />
+        </section>
+        
+        <section id="history" className="scroll-mt-28 py-24">
+          <History />
         </section>
 
         <section id="sponsor" className="scroll-mt-28 py-24">
