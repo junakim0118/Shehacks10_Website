@@ -1,3 +1,8 @@
+
+import Image from "next/image";
+import Link from "next/link";
+import Faq from "./components/faq";
+
 import Navbar from "./components/navbar";
 import Landing from "./components/landing";
 import Winners from "./components/winners";
@@ -32,6 +37,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">FAQ</h2>
           <p>Placeholder content.</p>
         </section>
+
       </main>
 
       {/* Footer socials */}
