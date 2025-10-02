@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Olympics_Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[url('/images/background_main.png')] bg-cover bg-center overflow-y-auto">
@@ -49,6 +48,7 @@ export default function Olympics_Home() {
             Read our docs
           </a>
         </div>
+
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

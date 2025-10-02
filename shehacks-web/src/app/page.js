@@ -1,6 +1,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import About from "../app/components/about";
+
 import Faq from "./components/faq";
 
 import Navbar from "./components/navbar";
@@ -19,6 +21,7 @@ export default function Home() {
         <section id="about" className="scroll-mt-28 py-24">
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
           <p>Our Mission, 3DS, Graphs</p>
+          <About />
         </section>
 
         <section id="sponsor" className="scroll-mt-28 py-24">
@@ -37,6 +40,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">FAQ</h2>
           <p>Placeholder content.</p>
         </section>
+
 
       </main>
 
