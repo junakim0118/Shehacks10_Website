@@ -24,7 +24,9 @@ export default function Home() {
         <Winners /> {/* has id="winners" inside */}
         <Olympics /> {/* has id="olympics" inside */}
 
-        
+        <section id="faq" className="scroll-mt-28 py-24">
+          <Faq />
+        </section>
       </main>
 
       {/* Footer socials */}
