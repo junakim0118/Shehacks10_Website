@@ -11,16 +11,7 @@ import Olympics from "./components/olympics";
 
 export default function Home() {
   return (
-    <div className="font-sans relative min-h-screen w-full text-white">
-      <Image
-        src="/images/background_main.png"
-        alt="SheHacks background"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center -z-10"
-      />
-
+    <div className="font-sans min-h-screen text-white bg-[url('/images/background_main.png')] bg-cover bg-center">
       <Navbar />
 
       <main className="px-8 sm:px-20 pb-20">
