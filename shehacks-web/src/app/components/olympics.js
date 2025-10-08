@@ -38,9 +38,9 @@ export default function Olympics() {
 
         <div className="mt-6 flex justify-center">
           <div className="relative inline-block">
-            <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="block">
+            {/* <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="block">
               <Image src="/images/learnmorebutton.png" alt="Learn More" width={242} height={62} />
-            </Link>
+            </Link> */}
             <Image
               src="/images/bottomstars.png"
               alt=""
