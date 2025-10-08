@@ -14,7 +14,13 @@ export default function About() {
             transform: "translateX(-50%)", // correct centering
           }}
         >
-          <Image
+          <h2
+            className="absolute text-white text-xs sm:text-lg md:text-2xl lg:text-3xl font-bold text-left px-4 sm:px-2 md:px-8 lg:px-20  top-[0%] sm:top-[0%] md:top-[1%] lg:top-[1.5%]  ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw] left-padding:1vw"
+          >
+            Our Mission
+          </h2>
+          <div className="relative flex justify-center w-fit h-fit">
+             <Image
             src="/images/mission-statement-frame.png"
             alt="Our Mission section"
             width={1061}
@@ -22,15 +28,8 @@ export default function About() {
             className="w-[90vw] sm:w-[80vw] md:w-[70vw] h-auto object-contain select-none pointer-events-none"
             priority
           />
-          <h2
-            className="absolute text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left px-4 sm:px-4 md:px-8 lg:px-20  top-[0%] sm:top-[0%] md:top-[1%] lg:top-[1.5%]  ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw]"
-    
-          >
-            Our Mission
-          </h2>
           <p
-            className="absolute text-white text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg font-large max-w-[1000px] text-left px-4 sm:px-4 md:px-8 lg:px-20 top-[15%] sm:top-[15%] md:top-[17%] lg:top-[19%] ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw]"
-          
+            className="absolute text-white text-[clamp(0.3rem,1.1vw,1.20rem)] font-large max-w-[50vw] max-h-[70%] text-left px-4 sm:px-4 md:px-8 lg:px-20 top-[15%] sm:top-[15%] md:top-[17%] lg:top-[19%] ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw]"
           >
             Our vision is to enhance inclusivity by inviting participants from
             diverse faculties and programs, transcending the typical hackathon
@@ -41,6 +40,7 @@ export default function About() {
             industry. We provide support through building, innovating, and
             connecting with experts beyond the classroom.
           </p>
+          </div>          
         </div>
 
         {/* Stars: responsive size + percentage positioning so it stays inside the frame */}
