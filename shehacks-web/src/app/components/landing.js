@@ -23,14 +23,14 @@ export default function Landing() {
         10th Iteration of Canada's Largest All-Female and Non-Binary 36 Hr Hackathon
         </p>
         <p className="mt-1 text-sm sm:text-base opacity-80">
-        January 10-12, 2026 ✦ Western University ✦ In-person
+        January 9-11, 2026 ✦ Western University ✦ In-person
         </p>
 
         <div className="mt-8 flex justify-center">
-        <Link href="/apply" className="group" aria-label="Apply as a Hacker">
+        <div className="group" aria-label="Coming Soon!">
             <Image
-            src="/images/applyhacker.png"
-            alt="Apply as a Hacker"
+            src="/images/coming-soon-button.png"
+            alt="Coming Soon!"
             width={414}
             height={153}
             priority
@@ -44,16 +44,7 @@ export default function Landing() {
                 drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
             "
             />
-        </Link>
         </div>
-
-        <div className="mt-8">
-          <a
-            href="#olympics"
-            className="underline underline-offset-4 opacity-80 hover:opacity-100"
-          >
-            Hacker Olympics →
-          </a>
         </div>
       </div>
     </section>
