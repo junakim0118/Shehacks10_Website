@@ -15,17 +15,18 @@ export default function Home() {
           height={700}
           priority
         />
-       <section id="about" className="w-full mt-12">
+       <section id="about" className="w-full mt-8">
           <About />
         </section>
        
-       <section id="history" className="w-full mt-12">
+       <section id="history" className="w-full mt-8">
           <History />
         </section>
 
-        <section id="broughttoyouby" className="w-full mt-12">
+        <section id="broughttoyouby" className="w-full mt-2">
           <BroughtToYouBy />
         </section>
+
         <Link href="/olympics">Hacker Olympics {"-->"}</Link>
         <div className="w-full mt-12">
       </div>
