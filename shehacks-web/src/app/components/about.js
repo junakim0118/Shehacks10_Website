@@ -29,7 +29,7 @@ export default function About() {
             Our Mission
           </h2>
           <p
-            className="absolute text-white text-xs sm:text-xs md:text-sm lg:text-base font-large max-w-[1000px] text-left px-4 sm:px-4 md:px-8 lg:px-20 top-[15%] sm:top-[15%] md:top-[17%] lg:top-[19%] ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw]"
+            className="absolute text-white text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg font-large max-w-[1000px] text-left px-4 sm:px-4 md:px-8 lg:px-20 top-[15%] sm:top-[15%] md:top-[17%] lg:top-[19%] ml-[22vw] sm:ml-[20vw] md:ml-[18vw] lg:ml-[16vw]"
           
           >
             Our vision is to enhance inclusivity by inviting participants from
@@ -60,6 +60,7 @@ export default function About() {
       {/* Nintendo + Last Year */}
       <section className="w-full flex flex-col items-center -mt-10 md:-mt-14">
         {/* Nintendo section */}
+        
         <div className="w-full sm:w-[80vw] md:w-[85vw] lg:w-[800px] xl:w-[800px] px-4 sm:px-6 md:px-8">
           <Image
             src="/images/shehacks-nintendo.png"
@@ -88,7 +89,13 @@ export default function About() {
 
       {/* Sponsors section */}
       <section className="w-full flex justify-center mt-8 md:mt-12 lg:mt-16">
-        <div className="w-full max-w-screen-xl px-4 flex justify-center">
+        <h2
+            className="absolute text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-center "
+          >
+            Sponsors
+          </h2>
+          <div className="w-full max-w-screen-xl px-4 flex justify-center mt-12">
+          
           <Image
             src="/images/sponsors.png"
             alt="Sponsors"
