@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import About from "../app/components/about";
+import History from "../app/components/history";
+import BroughtToYouBy from "../app/components/brought-to-you-by";
 
 export default function Home() {
   return (
@@ -15,6 +17,14 @@ export default function Home() {
         />
        <section id="about" className="w-full mt-12">
           <About />
+        </section>
+       
+       <section id="history" className="w-full mt-12">
+          <History />
+        </section>
+
+        <section id="broughttoyouby" className="w-full mt-12">
+          <BroughtToYouBy />
         </section>
         <Link href="/olympics">Hacker Olympics {"-->"}</Link>
         <div className="w-full mt-12">

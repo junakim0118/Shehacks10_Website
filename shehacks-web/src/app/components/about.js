@@ -4,8 +4,8 @@ export default function About() {
   return (
     <div className="w-full">
       {/* Mission Statement section */}
-        <section className="w-full flex justify-start mb-2 md:mb-4">
-        <div className="relative right-80 w-[min(90vw,700px)] md:w-[min(75vw,850px)]">
+      <section className="w-full flex justify-start py-8 sm:py-12 md:py-16">
+        <div className="relative right-4 sm:right-8 md:right-12 lg:right-16 w-[90vw] sm:w-[80vw] md:w-[70vw] lg:w-[60vw] max-w-[850px]">
           <Image
             src="/images/missioin-statement-chrome.png"
             alt="Our Mission section"
@@ -19,58 +19,59 @@ export default function About() {
             alt="Star decoration"
             width={70}
             height={70}
-            className="absolute -right-12 sm:-right-14 md:-right-16 top-[5%] w-12 h-12 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px] select-none pointer-events-none"
+            className="absolute -right-8 sm:-right-12 md:-right-16 top-[5%] w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 select-none pointer-events-none"
           />
           <Image
             src="/images/star.png"
             alt="Star decoration"
             width={40}
             height={40}
-            className="absolute -right-8 sm:-right-10 md:-right-[4.5rem] top-[15%] w-8 h-8 sm:w-10 sm:h-10 md:w-[40px] md:h-[40px] select-none pointer-events-none"
+            className="absolute -right-4 sm:-right-8 md:-right-12 top-[15%] w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 select-none pointer-events-none"
           />
         </div>
       </section>
-      {/* Nintendo + Last Year */}
-      <section className="w-full flex flex-col items-center -mt-10 md:-mt-14">
 
-        {/* Nintendo section */}
-        <div className="w-full sm:w-[80vw] md:w-[85vw] lg:w-[800px] xl:w-[800px] px-4 sm:px-6 md:px-8">
+      {/* Nintendo section */}
+      <section className="w-full flex justify-center py-8 sm:py-12 md:py-16">
+        <div className="w-[90vw] sm:w-[80vw] md:w-[75vw] lg:w-[65vw] max-w-[700px] px-4">
           <Image
             src="/images/shehacks-nintendo.png"
             alt="SheHacks Nintendo section"
-            width={700}
+            width={500}
             height={600}
-            className="block w-full h-auto object-contain select-none pointer-events-none"
-            sizes="(min-width: 1280px) 1000px, (min-width: 1024px) 900px, (min-width: 768px) 85vw, 90vw"
+            className="w-full h-auto object-contain select-none pointer-events-none"
             priority
           />
         </div>
+      </section>
 
-        {/* Last Year section - FULL WIDTH */}
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
-        <Image
+      {/* Last Year section */}
+      <section className="w-full flex justify-center py-8 sm:py-12 md:py-16">
+        <div className="w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] max-w-[1100px] px-4">
+          <Image
             src="/images/last-year-we-had.png"
             alt="Last Year We Had"
-            fill
-            className="object-cover select-none pointer-events-none"
+            width={2000}
+            height={800}
+            className="w-full h-auto object-contain select-none pointer-events-none"
             priority
-        />
+          />
         </div>
-    </section>
-    {/* Sponsors section */}
-<section className="w-full flex justify-center mt-8 md:mt-12 lg:mt-16">
-  <div className="w-full max-w-screen-xl px-4">
-    <Image
-      src="/images/sponsors.png"
-      alt="Sponsors"
-      width={2000}
-      height={1800}
-      className="w-full h-auto object-contain select-none pointer-events-none"
-      sizes="100vw"
-      priority
-    />
-  </div>
-</section>
-</div>
+      </section>
+
+      {/* Sponsors section */}
+      <section className="w-full flex justify-center py-8 sm:py-12 md:py-16">
+        <div className="w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[55vw] max-w-[800px] px-4">
+          <Image
+            src="/images/sponsors.png"
+            alt="Sponsors"
+            width={2000}
+            height={1800}
+            className="w-full h-auto object-contain select-none pointer-events-none"
+            priority
+          />
+        </div>
+      </section>
+    </div>
   );
 }
