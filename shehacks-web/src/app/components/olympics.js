@@ -89,6 +89,25 @@ export default function Olympics() {
           width: CAM_W_CLAMP, // responsive width; height follows
         }}
       />
+      <div className="w-full flex justify-center mt-8" aria-label="Learn More">
+        <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="group inline-block">                  <Image
+                  src="/images/HOLearnMore.png"
+                  alt="Learn More"
+                  width={303}
+                  height={121}
+                  priority
+                  sizes="(min-width:1024px) 300px, (min-width:768px) 260px, (min-width:640px) 240px, 200px"
+                  className="
+                      h-auto
+                      w-[200px] sm:w-[240px] md:w-[260px] lg:w-[300px]
+                      transition-transform duration-200
+                      group-hover:scale-[1.01] group-active:scale-[0.985]
+                      hover:brightness-110
+                      drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
+                  "
+                  />
+              </Link>
+          </div>
     </section>
   );
 }
