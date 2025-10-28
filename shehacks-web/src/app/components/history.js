@@ -8,7 +8,7 @@ const CAM_W_CLAMP = "clamp(260px, 26vw, 520px)";   // ≥sm width range
 const PB_CLAMP    = "clamp(220px, 28vw, 420px)";   // bottom padding to avoid cropping
 const BOTTOM_CLAMP = "calc(-1 * clamp(70px, 8vw, 140px))"; // dip below content
 
-export default function Olympics() {
+export default function History() {
   return (
     <section
       id="history"
