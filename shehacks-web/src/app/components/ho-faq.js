@@ -67,24 +67,35 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute right-[-150] top-50 hidden sm:block opacity-100">
+      <div className="pointer-events-none absolute left-[-380] top-[-210] hidden sm:block opacity-100">
         <Image
-          src="/images/faqstars.png"
-          alt="stars"
-          width={48}
-          height={48}
+          src="/images/stars.png"
+          alt="star"
+          width={69}
+          height={72}
+          className="transform scale-x-[-1]"
+          priority
+        />
+      </div>
+
+      <div className="pointer-events-none absolute left-[-130] top-15 hidden sm:block opacity-100">
+        <Image
+          src="/images/star.png"
+          alt="star"
+          width={69}
+          height={72}
           className="select-none"
           priority
         />
       </div>
 
-      <div className="pointer-events-none absolute left-[-450] top-[-350] hidden sm:block opacity-100">
+      <div className="pointer-events-none absolute left-[-490] top-[-350] hidden sm:block opacity-100">
         <Image
-          src="/images/closedflipphone 1.png"
+          src="/images/closedphone.gif"
           alt="closed flip phone image"
           width={500}
           height={500}
-          className="select-none"
+          className="transform scale-x-[-1]"
           priority
         />
       </div>
