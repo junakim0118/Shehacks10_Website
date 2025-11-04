@@ -9,6 +9,8 @@ import Landing from "./components/landing";
 import Winners from "./components/winners";
 import Olympics from "./components/olympics";
 import Connect from "./components/connect";
+import History from "./components/history";
+import Wits from "./components/wits";
 
 export default function Home() {
   return (
@@ -24,7 +26,10 @@ export default function Home() {
 
         <Winners /> {/* has id="winners" inside */}
         <Olympics /> {/* has id="olympics" inside */}
+        
 
+        <History /> {/* has id="history" inside */}
+        <Wits /> {/* has id="wits" inside */}
         <section id="faq" className="scroll-mt-28 py-24">
           <Faq />
         </section>
