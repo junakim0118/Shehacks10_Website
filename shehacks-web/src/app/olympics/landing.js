@@ -25,7 +25,7 @@ export default function Landing() {
                     </p>
 
                     {/* Star and Phone centered together */}
-                    <div className="flex items-center justify-start gap-0 w-full px-6 mx-auto">
+                    <div className="flex items-center justify-center gap-0 w-full px-6 mx-auto">
                         <Image
                             src="/images/stars.png"
                             alt="Stars"
@@ -33,7 +33,7 @@ export default function Landing() {
                             height={75}
                             priority
                             unoptimized
-                            className="object-contain w-[32%] max-w-[100px] h-auto"
+                            className="object-contain w-[clamp(60px,3vw,120px)] h-auto"
                         />
 
                         <Image

@@ -38,9 +38,25 @@ export default function Olympics() {
 
         <div className="mt-6 flex justify-center">
           <div className="relative inline-block">
-            <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="block">
-              <Image src="/images/learnmoreHO.png" alt="Learn More" width={242} height={62} />
-            </Link>
+            <div className="w-full flex justify-center mt-8" aria-label="Learn More">
+        <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="group inline-block">                  <Image
+                  src="/images/learnmoreHO.png"
+                  alt="Learn More"
+                  width={303}
+                  height={121}
+                  priority
+                  sizes="(min-width:1024px) 300px, (min-width:768px) 260px, (min-width:640px) 240px, 200px"
+                  className="
+                      h-auto
+                      w-[200px] sm:w-[240px] md:w-[260px] lg:w-[300px]
+                      transition-transform duration-200
+                      group-hover:scale-[1.01] group-active:scale-[0.985]
+                      hover:brightness-110
+                      drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
+                  "
+                  />
+              </Link>
+          </div>
             <Image
               src="/images/bottomstars.png"
               alt=""
@@ -50,7 +66,7 @@ export default function Olympics() {
               className="
                 pointer-events-none select-none absolute
                 -right-8 top-16 sm:top-20
-                w-[clamp(40px,6vw,120px)]  /* scales with screen size */
+                w-[clamp(20px,3vw,120px)]  /* scales with screen size */
                 h-auto
               "
               priority
