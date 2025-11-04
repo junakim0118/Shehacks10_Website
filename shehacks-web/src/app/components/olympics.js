@@ -40,7 +40,7 @@ export default function Olympics() {
           <div className="relative inline-block">
             <div className="w-full flex justify-center mt-8" aria-label="Learn More">
         <Link href="/olympics" aria-label="Learn more about Hacker Olympics" className="group inline-block">                  <Image
-                  src="/images/learnmoreHO.png"
+                  src="/images/learnmore-ho.png"
                   alt="Learn More"
                   width={303}
                   height={121}

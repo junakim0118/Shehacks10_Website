@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import HOFaq from "../components/ho-faq";
+import HOFaq from "./ho-faq";
+import HOInfo from "./howHOworks";
 
 
 import Connect from "@/app/components/connect";
@@ -16,10 +17,12 @@ export default function Olympics_Home() {
 
         <main>
           <Landing/>
+          {/* How Hacker Olympics Works Section */}
+          <div className="scroll-mt-28 py-24">
+        <HOInfo/></div>
      {/* FAQ Section (Hacker Olympics) */}
-        <section id="faq" className="scroll-mt-28 py-24">
           <HOFaq />
-           </section>
+        
         </main>
 
 

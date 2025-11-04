@@ -16,7 +16,7 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
   return (
     <section id="faq" className="relative scroll-mt-28 py-16 sm:py-20 w-full">
       {/* MOBILE/TABLET: Phone + stars shrink and move above FAQ */}
-      <div className="sm:hidden mb-8 flex flex-col items-center relative w-full">
+      <div className="sm:hidden mb-8 flex flex-col items-center justify-center relative w-full">
 
         {/* Phone Image */}
         <Image
@@ -30,7 +30,7 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
 
         {/* Stars positioned relative to phone like desktop */}
         {/* Stars cluster */}
-        <div className="absolute top-12 left-12">
+        <div className="relative top-12 left-12">
           <Image
             src="/images/stars.png"
             alt="stars"
@@ -42,7 +42,7 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
         </div>
 
         {/* Single star */}
-        <div className="absolute bottom-12 right-10">
+        <div className="relative bottom-12 right-10">
           <Image
             src="/images/star.png"
             alt="star"

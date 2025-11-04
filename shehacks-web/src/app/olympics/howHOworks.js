@@ -24,6 +24,8 @@ import Image from "next/image";
                 {/*This has the paragraph and tv image */}
                 <div className="flex flex-col md:flex-row md:items-start max-w-4xl mx-auto gap-11">
                     <p className="max-w-md leading-relaxed ">
+                        <br/>
+                        <br/>
                     Hackers in this stream will work in teams of 4 to complete a project (“mini hack”) instead of competing in the regular stream. The project will be built upon skills taught in workshops that run during SheHacks+, and are specifically designed for beginners in the Hacker Olympics stream.
                     <br/>Bridge the skills gap that drives the lack of diversity in the tech industry
                     <br/><br/>Women and non-binary individuals face more barriers to exploring tech interests and getting the education and experience to enter the tech industry. Hacker Olympics is their first step in bridging the gap.
