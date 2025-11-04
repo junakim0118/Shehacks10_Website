@@ -5,9 +5,9 @@ export default function Connect() {
     <div className="flex flex-col items-center w-full">
       
       {/* Sponsors section */}
-      <section className="relative w-full max-w-[1200px] mx-auto mt-8 md:mt-12 lg:mt-16">
+      <section className="relative w-full max-w-[1200px] mx-auto -mt-4 md:-mt-6 lg:-mt-8">
         {/* Centered text block */}
-        <div className="flex flex-col items-center justify-center text-center py-8 px-4">
+        <div className="flex flex-col items-center justify-center text-center py-100 px-4 -translate-y-100">
           <h1 className="text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold">
             Connect With Us
           </h1>
@@ -61,6 +61,36 @@ export default function Connect() {
                 className="object-contain select-none pointer-events-none"
               />
             </a>
+          </div>
+        </div>
+
+        {/* Overlay Panels Section */}
+        <div className="relative w-full h-96 flex items-center justify-center">
+          {/* Left Panel - positioned behind and slightly left of center */}
+          <div className="absolute -translate-x-125 -translate-y-50 z-10 animate-none hover:scale-110 transition-all duration-500" style={{animationDuration: '6s'}}>
+            <img 
+              src="/images/leftpanel.png" 
+              alt="Left Panel" 
+              className="object-contain"
+            />
+          </div>
+          
+          {/* Main Panel - centered, highest z-index */}
+          <div className="relative z-30 -translate-y-100 animate-bounce hover:scale-110 transition-all duration-1000" style={{animationDuration: '6.5s'}}>
+            <img 
+              src="/images/mainpanel.png" 
+              alt="Main Panel" 
+              className="object-contain"
+            />
+          </div>
+          
+          {/* Right Panel - positioned behind and slightly right of center */}
+          <div className="absolute translate-x-125 -translate-y-50 z-20 animate-none hover:scale-110 transition-all duration-500" style={{animationDuration: '12s'}}>
+            <img 
+              src="/images/rightpanel.png" 
+              alt="Right Panel" 
+              className="object-contain"
+            />
           </div>
         </div>
 
