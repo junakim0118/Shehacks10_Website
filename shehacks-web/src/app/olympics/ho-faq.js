@@ -3,9 +3,10 @@ import { useState } from "react";
 import Image from "next/image";
 
 const DEFAULT_ITEMS = [
-  { q: "Can I compete in both Hacker Olympics and regular stream?", a: "[answer]" },
-  { q: "If I am a beginner, can I compete in the regular stream?", a: "[answer]" },
-  { q: "What challenges will I compete in?", a: "[answer]" },
+  { q: "Can I compete in both Hacker Olympics and regular stream?", a: "Unfortunately, you will have to choose between the option of Hacker Olympics and Regular Stream. We want to ensure that you have enough time for your hack and that you complete your hack to the best of your ability." },
+  { q: "If I am a beginner, can I compete in the regular stream?", a: "Yes, you’re allowed to choose one of the two streams that you believe suits you and your skillset." },
+  { q: "What challenges will I compete in?", a: "The challenges will be announced a week ahead of the hackathon. You will receive an email when it opens up so you don't miss anything." },
+  { q: "Can I switch into a different stream the day of SheHacks+?", a:"Unfortunately, you will have to remain in the stream you chose during applications. If you miss the deadline, there will be a waitlist you can sign up for."}
 ];
 
 const PHONE_DESIGN = { width: 500, height: 500 };
