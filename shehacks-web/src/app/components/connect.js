@@ -12,7 +12,7 @@ export default function Connect() {
             Connect With Us
           </h1>
           <p className="mt-2 text-white text-xs sm:text-sm md:text-base lg:text-lg">
-            hello@shehacks.ca
+            wits.uwo@gmail.com
           </p>
 
           {/* Three extra-small images under the text */}
@@ -48,7 +48,7 @@ export default function Connect() {
             </a>
 
             <a
-              href="https://www.facebook.com/your-page"
+              href="https://www.facebook.com/wits.uwo/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
