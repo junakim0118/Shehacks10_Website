@@ -12,7 +12,7 @@ import Landing from "@/app/olympics/landing";
 
 export default function Olympics_Home() {
   return (
-      <div className="font-sans min-h-screen text-white bg-[url('/images/background_main.png')] bg-cover bg-center">
+      <div className="font-sans min-h-screen text-white bg-[url('/images/HO_background.png')] bg-cover bg-center">
         <Navbar/>
 
         <main>
