@@ -22,6 +22,16 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
           style={{ fontSize: "clamp(24px, 3vw, 34px)" }}>
         FAQ
       </h2>
+      <div className="pointer-events-none absolute right-[150] top-[-50] hidden sm:block opacity-100">
+        <Image
+          src="/images/faqstars.png"
+          alt=""
+          width={48*2}
+          height={48*2}
+          className="select-none"
+          priority
+        />
+      </div>
 
       <div className="mx-auto mt-6 sm:mt-8 w-full max-w-3xl px-4">
         <ul className="divide-y divide-white/15">
@@ -72,16 +82,7 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
         </ul>
       </div>
 
-      <div className="pointer-events-none absolute right-[-150] top-50 hidden sm:block opacity-100">
-        <Image
-          src="/images/faqstars.png"
-          alt=""
-          width={48}
-          height={48}
-          className="select-none"
-          priority
-        />
-      </div>
+      
     </section>
   );
 }
