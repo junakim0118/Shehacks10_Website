@@ -38,7 +38,7 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
           {/* Desktop phone */}
           <div className="inline-block ml-[5vw]">
             <Image
-              src="/images/closedphone.gif"
+              src="/images/closedphoneHO.gif"
               alt="closed flip phone"
               width={460}
               height={501}
@@ -150,7 +150,7 @@ export default function HOFaq({ items = DEFAULT_ITEMS }) {
           {/* Desktop phone */}
           <div className="inline-block ml-[5vw]">
             <Image
-              src="/images/closedphone.gif"
+              src="/images/closedphoneHO.gif"
               alt="closed flip phone"
               width={460}
               height={501}

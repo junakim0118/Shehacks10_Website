@@ -64,17 +64,17 @@ function FrameCard({ person, scale = 1 }) {
 
 /* ---------------------- Carousel ---------------------- */
 export default function SheHacksTeam() {
+  const [isPaused, setIsPaused] = useState(false);
   const s = useResponsiveScale(); // ✅ scale whole carousel
 
   const people = useMemo(
     () => [
-      { name: "Vaanya Puri", role: "SheHacks+ Co-Chair", photo: "/images/team/vaanya.jpeg" },
-      { name: "Freda Zhao", role: "SheHacks+ Co-Chair", photo: "/images/team/freda.jpeg" },
-      { name: "Tina Xu", role: "SheHacks+ Director", photo: "/images/team/tina.png" },
-      { name: "Emily Yu", role: "SheHacks+ Director", photo: "/images/team/emily.jpeg" },
-      { name: "Lillian Wei", role: "SheHacks+ Director", photo: "/images/team/lillian.jpeg" },
-      { name: "Ella Sajor", role: "SheHacks+ Director", photo: "/images/team/ella.jpeg" },
-      { name: "Raisa Kayastha", role: "SheHacks+ Director", photo: "/images/team/raisa.jpeg" },
+      { name: "Vaanya Puri", role: "SheHacks+ Co-Chair", photo: "/images/team/vaanya.jpeg",linkedin:'https://www.linkedin.com/in/vaanyap/' },
+      { name: "Freda Zhao", role: "SheHacks+ Co-Chair", photo: "/images/team/freda.jpeg", linkedin:'https://www.linkedin.com/in/freda-z-984442210/' },
+      { name: "Emily Yu", role: "SheHacks+ Director", photo: "/images/team/emily.jpeg", linkedin:'https://www.linkedin.com/in/emily-nz-yu/' },
+      { name: "Lillian Wei", role: "SheHacks+ Director", photo: "/images/team/lillian.jpeg", linkedin:'https://www.linkedin.com/in/lillianhwei/' },
+      { name: "Ella Sajor", role: "SheHacks+ Director", photo: "/images/team/ella.jpeg", linkedin:'https://www.linkedin.com/in/ella-sajor/' },
+      { name: "Raisa Kayastha", role: "SheHacks+ Director", photo: "/images/team/raisa.jpeg", linkedin: 'https://www.linkedin.com/in/raisa-kayastha77/' },
     ],
     []
   );
@@ -85,6 +85,14 @@ export default function SheHacksTeam() {
 
   const goLeft = () => setIndex((i) => idx(i + 1));
   const goRight = () => setIndex((i) => idx(i - 1));
+
+  useEffect(() => {
+  if (isPaused) return; // don't rotate if paused
+  const interval = setInterval(() => {
+    goLeft();
+  }, 4000);
+  return () => clearInterval(interval);
+}, [isPaused]);
 
   /* ✅ ORIGINAL VALUES: preserved exactly */
   const OFFSET_X = 380;
@@ -99,6 +107,8 @@ export default function SheHacksTeam() {
         {/* ✅ SCALE THE WHOLE CAROUSEL (this is the key fix) */}
         <div
           className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           style={{
             width: "1000px",
             height: "550px",
@@ -110,61 +120,67 @@ export default function SheHacksTeam() {
         >
           {/* LEFT */}
           <div
-            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)]"
+            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)] hover:scale-110"
             style={{
               transform: `translate(calc(-50% - ${OFFSET_X}px), calc(-50% + ${OFFSET_Y}px)) scale(${SCALE_SIDE})`,
               transitionDuration: `${DURATION}ms`,
             }}
           >
-            <FrameCard person={people[idx(index - 1)]} />
+            <div className="float">
+              <a href={people[idx(index - 1)].linkedin} target="_blank" rel="noopener noreferrer">
+                <FrameCard person={people[idx(index - 1)]} />
+              </a>
+            </div>
           </div>
 
           {/* CENTER */}
           <div
-            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)]"
+            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)] hover:scale-110"
             style={{
               transform: `translate(-50%, -50%) scale(${SCALE_CENTER})`,
               transitionDuration: `${DURATION}ms`,
             }}
           >
-            <FrameCard person={people[idx(index)]} />
+            <div className="float">
+              <a href={people[idx(index)].linkedin} target="_blank" rel="noopener noreferrer">
+                <FrameCard person={people[idx(index)]} />
+              </a>            
+            </div>
           </div>
 
           {/* RIGHT */}
           <div
-            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)]"
+            className="absolute top-1/2 left-1/2 transition-transform ease-[cubic-bezier(.22,.61,.36,1)] hover:scale-110"
             style={{
               transform: `translate(calc(-50% + ${OFFSET_X}px), calc(-50% + ${OFFSET_Y}px)) scale(${SCALE_SIDE})`,
               transitionDuration: `${DURATION}ms`,
             }}
           >
-            <FrameCard person={people[idx(index + 1)]} />
+            <div className="float">
+              <a href={people[idx(index + 1)].linkedin} target="_blank" rel="noopener noreferrer">
+                <FrameCard person={people[idx(index + 1)]} />
+              </a>
+            </div>
           </div>
 
-          {/* Arrows */}
-          <button
-            className="team-arrow absolute left-0 z-10"
-            style={{
-              top: "calc(100% + 25px)",
-              marginLeft: "20px",
-            }}
-            onClick={goLeft}
-          >
-            ←
-          </button>
-
-          <button
-            className="team-arrow absolute right-0 z-10"
-            style={{
-              top: "calc(100% + 25px)",
-              marginRight: "20px",
-            }}
-            onClick={goRight}
-          >
-            →
-          </button>
         </div>
       </div>
+      {/* --- Float animation --- */}
+      <style jsx>{`
+        .float {
+          display: inline-block; /* preserve layout */
+          animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+
+        .float:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
