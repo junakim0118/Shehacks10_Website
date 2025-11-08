@@ -3,11 +3,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "ABOUT", href: "#about" },
-  { label: "SPONSOR", href: "#sponsor" },
-  { label: "OLYMPICS", href: "#olympics" },
-  { label: "COMMUNITY", href: "#community" },
-  { label: "FAQ", href: "#faq" },
+  { label: "ABOUT", href: "#howHOworks" },
+  { label: "PAST WINNERS", href: "#ho-winners" },
+  { label: "FAQ", href: "#ho-faq" },
+  { label: "CONNECT WITH US", href: "#connect" },
+  { label: "SHEHACKS", href: "./" },
 ];
 
 // Logos scale together

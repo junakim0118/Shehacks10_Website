@@ -7,7 +7,7 @@ import HOInfo from "./howHOworks";
 
 import Connect from "@/app/components/connect";
 
-import Navbar from "../components/navbar";
+import Navbar from "./navbar";
 import Landing from "@/app/olympics/landing";
 import PastWinners from "./ho-winners";
 
