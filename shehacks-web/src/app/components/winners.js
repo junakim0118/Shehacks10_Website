@@ -164,7 +164,7 @@ export default function Winners() {
               onClick={() => {
                 goTo(index + 1);
               }}
-              className="w-12 h-12 sm:w-12 sm:h-12 rounded-full bg-white/20 hover:bg-white/20 flex items-center justify-center text-white"
+              className="w-12 h-12 sm:w-12 sm:h-12 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white"
             >
               <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
