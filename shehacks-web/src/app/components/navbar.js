@@ -86,7 +86,7 @@ export default function Navbar() {
                 className="
                   pointer-events-none select-none block
                   w-full h-auto
-                  mt-[clamp(1px,0.28vw,5px)]  /* ↑ increase = more gap; decrease = tighter */
+                  mt-[clamp(1px,0.01vw,5px)]  /* ↑ increase = more gap; decrease = tighter */
                 "
                 priority
               />
