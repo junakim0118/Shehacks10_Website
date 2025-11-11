@@ -88,26 +88,27 @@ export default function About() {
       </section>
 
       {/* Sponsors section */}
-      <section className="w-full flex justify-center mt-8 md:mt-12 lg:mt-16">
-        <h2
-            className="absolute text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-center "
-          >
-            Sponsors
+      <section className="w-full flex flex-col justify-center mt-8 md:mt-12 lg:mt-16">
+        <div>
+          <h2 className="text-sm text-base sm:text-xl md:text-3xl lg:text-4xl font-bold text-center ">
+            This Year's Sponsors
           </h2>
-          <div className="w-full max-w-screen-xl px-4 flex flex-col justify-center items-center mt-12">
-          
+        </div>
+          <div className="w-full max-w-screen-xl flex items-center justify-center mt-12 mx-auto">
           <Image
             src="/images/sponsors.png"
             alt="Sponsors"
             width={2000}
             height={1800}
-            className="w-[60vw] h-auto object-contain select-none pointer-events-none"
-            sizes="100vw"
+            className="block mx-auto w-[60vw] max-w-[1200px] h-auto object-contain select-none pointer-events-none"
+            sizes="(max-width:640px) 90vw, (max-width:1024px) 70vw, 60vw"
             priority
           />
-          <h1 className="mt-6 text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
-            COMING SOON!!
-          </h1>
+        </div>
+        <div>
+          <h3 className="mt-8 text-base sm:text-xl md:text-3xl lg:text-4xl font-semibold opacity-80 text-center">
+              Coming soon...
+          </h3>
         </div>
       </section>
     </div>

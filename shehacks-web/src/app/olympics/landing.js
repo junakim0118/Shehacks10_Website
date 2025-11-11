@@ -48,22 +48,24 @@ export default function Landing() {
                     </div>
 
                     {/* Apply button - using the applyhacker.png as I couldn't find applynow.png*/}
-                    <div className="group" aria-label="Apply Now!">
-                        <Image
-                            src="/images/applyhacker.png"
-                            alt="Apply Now!"
-                            width={100}
-                            height={100}
-                            priority
-                            unoptimized
-                            className="object-contain w-[75vw] max-w-[280px] h-auto
-                                transition-transform duration-200
-                                group-hover:scale-[1.01]
-                                group-active:scale-[0.985]
-                                hover:brightness-110
-                                drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]"
-                        />
-                    </div>
+                    <div className="group" aria-label="Coming Soon!">
+                                <Image
+                                src="/images/coming-soon-button.png"
+                                alt="Coming Soon!"
+                                width={414}
+                                height={153}
+                                priority
+                                sizes="(min-width:1024px) 300px, (min-width:768px) 260px, (min-width:640px) 240px, 200px"
+                                className="
+                                    h-auto
+                                    w-[200px] sm:w-[240px] md:w-[260px] lg:w-[300px]
+                                    transition-transform duration-200
+                                    group-hover:scale-[1.01] group-active:scale-[0.985]
+                                    hover:brightness-110
+                                    drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
+                                "
+                                />
+                            </div>
                 </div>
 
                 {/* Desktop layout - full spacing (≥1024px) */}
@@ -113,17 +115,26 @@ export default function Landing() {
                         </div>
 
                         {/* Apply button - same as above: using applyhacker.png for now */}
-                        <div className="group w-[60%] max-w-[40%] mt-[8%] ml-[8%]">
-                            <Image
-                                src="/images/applyhacker.png"
-                                alt="Apply Now!"
-                                width={350}
-                                height={100}
-                                priority
-                                unoptimized
-                                className="object-contain w-full h-auto transition-transform duration-200 group-hover:scale-[1.01] group-active:scale-[0.985] hover:brightness-110 drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]"
-                            />
-                        </div>
+                         <div className="mt-8 flex justify-center">
+                        <div className="group" aria-label="Coming Soon!">
+                                    <Image
+                                    src="/images/coming-soon-button.png"
+                                    alt="Coming Soon!"
+                                    width={414}
+                                    height={153}
+                                    priority
+                                    sizes="(min-width:1024px) 300px, (min-width:768px) 260px, (min-width:640px) 240px, 200px"
+                                    className="
+                                        h-auto
+                                        w-[200px] sm:w-[240px] md:w-[260px] lg:w-[300px]
+                                        transition-transform duration-200
+                                        group-hover:scale-[1.01] group-active:scale-[0.985]
+                                        hover:brightness-110
+                                        drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
+                                    "
+                                    />
+                                    </div>
+                                </div>
                     </div>
 
                 </div>

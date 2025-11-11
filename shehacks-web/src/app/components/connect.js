@@ -8,7 +8,7 @@ export default function Connect() {
       <section className="relative w-full max-w-[1200px] mx-auto mt-8 md:mt-12 lg:mt-16">
         {/* Centered text block */}
         <div className="flex flex-col items-center justify-center text-center py-8 px-4">
-          <h1 className="text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold">
+          <h1 className="text-white text-lg sm:text-xl md:text-4xl lg:text-5xl font-bold">
             Connect With Us
           </h1>
           <p className="mt-2 text-white text-xs sm:text-sm md:text-base lg:text-lg">
