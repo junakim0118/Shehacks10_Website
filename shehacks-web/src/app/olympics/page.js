@@ -1,102 +1,55 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import HOFaq from "./ho-faq";
+import HOInfo from "./howHOworks";
+
+
+import Connect from "@/app/components/connect";
+
+import Navbar from "./navbar";
+import Landing from "@/app/olympics/landing";
+import PastWinners from "./ho-winners";
+import SheHacksTeam from "../components/shehacksteam";
+
 export default function Olympics_Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[url('/images/background_main.png')] bg-cover bg-center overflow-y-auto">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          src="/images/bigLogo.png"
-          alt="Next.js logo"
-          width={400}
-          height={400}
-          priority
-        />
-        <Link href="/">Shehacks Main {"-->"}</Link>
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            This is Hacker Olympics page. Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/olympics/page.js
-            </code>
-            .
-          </li>
-        </ol>
+      <div className="font-sans min-h-screen text-white bg-[url('/images/HO_background.png')] bg-cover bg-center">
+        <Navbar/>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <main>
+          <Landing/>
+          {/* How Hacker Olympics Works Section */}
+          <div className="scroll-mt-28 pt-24">
+        <HOInfo/>
+        <div className="relative w-32 sm:w-48 md:w-56 lg:w-72 xl:w-96 aspect-square">
+          <Image
+            src="/images/cd 2.png"
+            alt=""
+            aria-hidden
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
+        
+        </div>
+          {/* Past Hacker Olympics Winners Section */}
+          <div>
+        <PastWinners/></div>
+     {/* FAQ Section (Hacker Olympics) */}
+          <HOFaq />
+        
+        </main>
 
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <footer className="px-8 sm:px-20 pb-10">
+          <section id="connect" className="scroll-mt-28 py-24">
+            <Connect/>
+            <SheHacksTeam/>
+          </section>
+        </footer>
+      </div>
+
   );
 }

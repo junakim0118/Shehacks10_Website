@@ -32,3 +32,28 @@ html {
 html, body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+.team-move { transition: transform 650ms ease-in-out, filter 650ms ease-in-out, opacity 650ms ease-in-out; }
+.team-fade { transition: opacity 650ms ease-in-out; }
+
+/* Arrow buttons */
+.team-arrow {
+  @apply rounded-full border border-white/30 bg-white/10 px-3 py-2 text-white;
+  font-size: 1.25rem;
+  line-height: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background .2s ease, border-color .2s ease, transform .12s ease;
+}
+.team-arrow:hover:not(:disabled){ background:rgba(255,255,255,.22); border-color:rgba(255,255,255,.6); transform:scale(1.03); }
+.team-arrow:active:not(:disabled){ transform:scale(.98); }
+.team-arrow:disabled{ opacity:.4; cursor:not-allowed; }
+
+@media (prefers-reduced-motion: reduce){
+  .team-move{ transition:none !important; }
+}
+
+/* Carousel track */
+.team-viewport { overflow: hidden; }
+.team-track { display:flex; gap: 40px; transition: transform 600ms ease-in-out; }
+.team-track.no-anim { transition: none; } /* used when we instantly reset after a step */

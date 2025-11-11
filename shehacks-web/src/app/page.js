@@ -9,6 +9,9 @@ import Landing from "./components/landing";
 import Winners from "./components/winners";
 import Olympics from "./components/olympics";
 import Connect from "./components/connect";
+import SheHacksTeam from "./components/shehacksteam"; 
+import History from "./components/history";
+import Wits from "./components/wits";
 
 export default function Home() {
   return (
@@ -24,16 +27,25 @@ export default function Home() {
 
         <Winners /> {/* has id="winners" inside */}
         <Olympics /> {/* has id="olympics" inside */}
+        
 
+        <History /> {/* has id="history" inside */}
+        <Wits /> {/* has id="wits" inside */}
         <section id="faq" className="scroll-mt-28 py-24">
           <Faq />
         </section>
 
       </main>
-<footer className="px-8 sm:px-20 pb-10">
+        <footer className="px-8 sm:px-20 pb-10">
         <section id="connect" className="scroll-mt-28 py-24">
           <Connect />
         </section>
+        
+        <section id="team" className="scroll-mt-28 py-24">
+          <SheHacksTeam />
+        </section>
+
+
         </footer>
       
     </div>
