@@ -19,7 +19,7 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
   return (
     <section id="faq" className="relative scroll-mt-28 py-16 sm:py-20 w-full">
       <h2 className="text-center font-semibold text-white"
-          style={{ fontSize: "clamp(24px, 3vw, 34px)" }}>
+          style={{ fontSize: "clamp(40px, 5vw, 50px)" }}>
         FAQ
       </h2>
       <div className="pointer-events-none absolute right-[150] top-[-50] hidden sm:block opacity-100">

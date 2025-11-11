@@ -19,6 +19,35 @@
   }
 }
 
+@font-face {
+  font-family: 'Xilla';
+  src: url('/fonts/Xilla Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Xilla';
+  src: url('/fonts/Xilla Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/fonts/Inconsolata.ttf') format('truetype');
+  font-weight: 100 900; /* variable font range */
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, a, strong {
+  font-family: 'Xilla', sans-serif;
+}
+
+body, p, li, span {
+  font-family: 'Inconsolata', monospace;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
