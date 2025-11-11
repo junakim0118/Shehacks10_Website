@@ -94,7 +94,7 @@ export default function About() {
           >
             Sponsors
           </h2>
-          <div className="w-full max-w-screen-xl px-4 flex justify-center mt-12">
+          <div className="w-full max-w-screen-xl px-4 flex flex-col justify-center items-center mt-12">
           
           <Image
             src="/images/sponsors.png"
@@ -105,6 +105,9 @@ export default function About() {
             sizes="100vw"
             priority
           />
+          <h1 className="mt-6 text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
+            COMING SOON!!
+          </h1>
         </div>
       </section>
     </div>

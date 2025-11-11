@@ -38,7 +38,7 @@ export default function Olympics_Home() {
           <div>
         <PastWinners/></div>
      {/* FAQ Section (Hacker Olympics) */}
-          <HOFaq />
+          <div className="mt-24"><HOFaq /></div>
         
         </main>
 
