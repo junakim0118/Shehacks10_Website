@@ -10,6 +10,7 @@ import Connect from "@/app/components/connect";
 import Navbar from "./navbar";
 import Landing from "@/app/olympics/landing";
 import PastWinners from "./ho-winners";
+import SheHacksTeam from "../components/shehacksteam";
 
 export default function Olympics_Home() {
   return (
@@ -45,6 +46,7 @@ export default function Olympics_Home() {
         <footer className="px-8 sm:px-20 pb-10">
           <section id="connect" className="scroll-mt-28 py-24">
             <Connect/>
+            <SheHacksTeam/>
           </section>
         </footer>
       </div>
