@@ -94,16 +94,16 @@ export default function About() {
             This Year's Sponsors
           </h2>
         </div>
-          <div className="w-full max-w-screen-xl px-4 flex justify-center mt-12">
-              <Image
-                src="/images/sponsors.png"
-                alt="Sponsors"
-                width={2000}
-                height={1800}
-                className="w-[60vw] h-auto object-contain select-none pointer-events-none"
-                sizes="100vw"
-                priority
-              />
+          <div className="w-full max-w-screen-xl flex items-center justify-center mt-12 mx-auto">
+          <Image
+            src="/images/sponsors.png"
+            alt="Sponsors"
+            width={2000}
+            height={1800}
+            className="block mx-auto w-[60vw] max-w-[1200px] h-auto object-contain select-none pointer-events-none"
+            sizes="(max-width:640px) 90vw, (max-width:1024px) 70vw, 60vw"
+            priority
+          />
         </div>
         <div>
           <h3 className="mt-8 text-base sm:text-xl md:text-3xl lg:text-4xl font-semibold opacity-80 text-center">

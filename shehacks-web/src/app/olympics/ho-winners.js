@@ -144,7 +144,6 @@ export default function PastWinners() {
               <h2
                 className="text-center text-white whitespace-nowrap"
                 style={{
-                  fontFamily: "'Segoe UI', system-ui, sans-serif",
                   fontWeight: 700,
                   fontStyle: "italic",
                   fontSize: "24px", // reduced
