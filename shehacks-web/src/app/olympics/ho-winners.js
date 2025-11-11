@@ -196,7 +196,7 @@ export default function PastWinners() {
           </div>
 
           {/* Arrow controls (manual) */}
-          <div className="absolute z-30 top-[60%] right-50 transform -translate-y-1/2 flex flex-col gap-2">
+          <div className="absolute z-30 top-[60%] right-[20vw]  transform -translate-y-1/2 flex flex-col gap-2">
 
             <button
               aria-label="Next winner"
