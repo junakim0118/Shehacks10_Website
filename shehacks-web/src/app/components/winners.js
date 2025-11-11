@@ -145,7 +145,7 @@ export default function Winners() {
           </div>
 
           {/* Hard-drawn frame */}
-          <div className="absolute inset-0 z-10 pointer-events-none select-none -translate-x-[10px] md:-translate-x-[14px] lg:-translate-x-[18px]">
+          <div className="absolute inset-0 z-10 pointer-events-none select-none translate-x-[10px] md:translate-x-[18px] lg:translate-x-[24px]">
             <Image
               src="/images/pastwinners.png"
               alt="Past SheHacks+ Winners frame"
@@ -187,9 +187,9 @@ export default function Winners() {
               // The font sizes here assume the design size. They will scale with the whole block.
               style={{ fontSize: 18 }}
             >
-              <p className="italic font-semibold" style={{ fontSize: 20, lineHeight: 1.1 }}>
+              <h3 className="font-bold" style={{ fontSize: 20, lineHeight: 1.1 }}>
                 {title}
-              </p>
+              </h3>
               <p className="mt-2 opacity-90" style={{ fontSize: 15, lineHeight: 1.25 }}>
                 {description}
               </p>

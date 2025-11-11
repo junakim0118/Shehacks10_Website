@@ -26,7 +26,7 @@ export default function Olympics() {
             className="pointer-events-none select-none absolute -left-[70px] top-[-8px] w-14 sm:w-16 h-auto"
             priority
           />
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white">Hacker Olympics</h2>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">Hacker Olympics</h1>
         </div>
 
         <p

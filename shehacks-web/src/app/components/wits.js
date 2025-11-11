@@ -31,7 +31,7 @@ export default function Wits() {
                     className="mt-[30px] ml-[10vw] mr-[7vw] sm:mt-10 md:mt-12 text-base sm:text-lg text-white/95"
           style={{ textShadow: "0 1px 2px rgba(0,0,0,0.55)" }}
                   >
-                    <strong className="block font-bold">Building a future for women+ in tech</strong>
+                    <strong className="block font-bold text-lg sm:text-xl">Building a future for women+ in tech</strong>
                     <br></br>
                     WITS+ is a club at Western University that provides its community with initiatives and resources to inspire. We aim to empower women, women-identifying, and non-binary individuals in tech and equip them with the necessary skills to succeed in the industry.
                   </p>

@@ -88,23 +88,27 @@ export default function About() {
       </section>
 
       {/* Sponsors section */}
-      <section className="w-full flex justify-center mt-8 md:mt-12 lg:mt-16">
-        <h2
-            className="absolute text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-center "
-          >
-            Sponsors
+      <section className="w-full flex flex-col justify-center mt-8 md:mt-12 lg:mt-16">
+        <div>
+          <h2 className="text-sm text-base sm:text-xl md:text-3xl lg:text-4xl font-bold text-center ">
+            This Year's Sponsors
           </h2>
+        </div>
           <div className="w-full max-w-screen-xl px-4 flex justify-center mt-12">
-          
-          <Image
-            src="/images/sponsors.png"
-            alt="Sponsors"
-            width={2000}
-            height={1800}
-            className="w-[60vw] h-auto object-contain select-none pointer-events-none"
-            sizes="100vw"
-            priority
-          />
+              <Image
+                src="/images/sponsors.png"
+                alt="Sponsors"
+                width={2000}
+                height={1800}
+                className="w-[60vw] h-auto object-contain select-none pointer-events-none"
+                sizes="100vw"
+                priority
+              />
+        </div>
+        <div>
+          <h3 className="mt-8 text-base sm:text-xl md:text-3xl lg:text-4xl font-semibold opacity-80 text-center">
+              Coming soon...
+          </h3>
         </div>
       </section>
     </div>
