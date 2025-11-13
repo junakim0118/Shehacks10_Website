@@ -23,7 +23,7 @@ export default function Landing() {
         10th Iteration of Canada's Largest All-Female and Non-Binary 36 Hr Hackathon
         </h1>
         <h3 className="mt-1 text-base sm:text-2xl opacity-80">
-        January 10-12, 2026 ✦ Western University ✦ In-person
+        January 9-11, 2026 ✦ Western University ✦ In-person
         </h3>
 
         <div className="mt-8 flex justify-center">
