@@ -12,6 +12,7 @@ import Connect from "./components/connect";
 import SheHacksTeam from "./components/shehacksteam"; 
 import History from "./components/history";
 import Wits from "./components/wits";
+import Sponsor from "./components/sponsor";
 
 export default function Home() {
   return (
@@ -25,11 +26,19 @@ export default function Home() {
           <About />
         </section>
         
-        <Winners /> {/* has id="winners" inside */}
+        <section id="sponsor" className="scroll-mt-28 py-24">
+          <Sponsor/>
+        </section>
+
+        <div className="scroll-mt-28 py-24">
+          <Winners /> {/* has id="winners" inside */}
+        </div>
+        
         <Olympics /> {/* has id="olympics" inside */}
         
-
-        <History /> {/* has id="history" inside */}
+        <div className="scroll-mt-28 py-24">
+          <History /> {/* has id="history" inside */}
+        </div>
         <Wits /> {/* has id="wits" inside */}
         <section id="faq" className="scroll-mt-28 py-24">
           <Faq />
