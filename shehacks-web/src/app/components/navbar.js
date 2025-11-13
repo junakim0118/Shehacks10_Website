@@ -40,7 +40,7 @@ export default function Navbar() {
               className="w-full h-auto"
             />
           </a>
-
+        <a href="./">
           <Image
             src="/images/SHnavlogo.png"
             alt="SheHacks"
@@ -49,6 +49,7 @@ export default function Navbar() {
             className={`${LOGO_SIZES} h-auto select-none pointer-events-none mt-[clamp(6px,1.2vw,20px)]`}
             priority
           />
+        </a>
         </div>
 
         {/* DESKTOP NAV (visible ≥ 400px) */}
@@ -95,7 +96,7 @@ export default function Navbar() {
         </div>
 
         {/* HAMBURGER (visible < 400px) */}
-        <div className="block min-[400px]:hidden">
+        <div className="block min-[400px]:hidden mt-[3vw]">
           <button
             aria-label="Open menu"
             aria-expanded={open}

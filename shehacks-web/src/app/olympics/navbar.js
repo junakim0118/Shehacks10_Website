@@ -41,14 +41,16 @@ export default function Navbar() {
             />
           </a>
 
-          <Image
-            src="/images/SHnavlogo.png"
-            alt="SheHacks"
-            width={98}
-            height={74}
-            className={`${LOGO_SIZES} h-auto select-none pointer-events-none mt-[clamp(6px,1.2vw,20px)]`}
-            priority
-          />
+          <a href="./">
+            <Image
+              src="/images/SHnavlogo.png"
+              alt="SheHacks"
+              width={98}
+              height={74}
+              className={`${LOGO_SIZES} h-auto select-none pointer-events-none mt-[clamp(6px,1.2vw,20px)]`}
+              priority
+            />
+          </a>
         </div>
 
         {/* DESKTOP NAV (visible ≥ 400px) */}
