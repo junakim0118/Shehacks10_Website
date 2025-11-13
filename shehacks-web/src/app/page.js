@@ -24,7 +24,7 @@ export default function Home() {
         <section id="about" className="scroll-mt-28 py-24">
           <About />
         </section>
-
+        
         <Winners /> {/* has id="winners" inside */}
         <Olympics /> {/* has id="olympics" inside */}
         

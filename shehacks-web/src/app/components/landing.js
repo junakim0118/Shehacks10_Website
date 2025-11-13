@@ -9,21 +9,21 @@ export default function Landing() {
     >
 
       {/* Main content */}
-      <div className="-mt-[9vw] mx-auto max-w-5xl px-6 text-center text-white">
+      <div className="-mt-[8vw] mx-auto max-w-5xl px-6 text-center text-white">
         <Image
           src="/images/bigLogo.png"
           alt="SheHacks X Logo"
-          width={700}
-          height={700}
+          width={800}
+          height={800}
           priority
           className="mx-auto mb-4"
         />
 
         <h1 className="text-lg sm:text-3xl opacity-90 font-bold">
-        10th Iteration of Canada's Largest All-Female and Non-Binary 36 Hr Hackathon
+          10th Iteration of Canada's Largest All-Female and Non-Binary 36 Hr Hackathon
         </h1>
         <h3 className="mt-1 text-base sm:text-2xl opacity-80">
-        January 9-11, 2026 ✦ Western University ✦ In-person
+          January 9-11, 2026 ✦ Western University ✦ In-person
         </h3>
 
         <div className="mt-8 flex justify-center">
