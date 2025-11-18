@@ -40,13 +40,13 @@ export default function Home() {
           <History /> {/* has id="history" inside */}
         </div>
         <Wits /> {/* has id="wits" inside */}
-        <section id="faq" className="scroll-mt-28 py-24">
+        <section id="faq" className="scroll-mt-28 pt-15">
           <Faq />
-        </section>
+        </section>               
 
       </main>
-        <footer className="px-8 sm:px-20 pb-10">
-        <section id="connect" className="scroll-mt-28 py-24">
+        <footer className="pb-5">
+        <section id="connect" className="scroll-mt-28">
           <Connect />
         </section>
         

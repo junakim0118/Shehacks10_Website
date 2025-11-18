@@ -26,11 +26,21 @@ export default function Olympics() {
             className="pointer-events-none select-none absolute -left-[70px] top-[-8px] w-14 sm:w-16 h-auto"
             priority
           />
-          <h1 className="text-4xl sm:text-5xl font-bold text-white">Hacker Olympics</h1>
-        </div>
-
+          <div className="inline-block text-center">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white">Hacker Olympics</h1>
+            <Image
+              src="/images/HO_title_line.png"
+              alt=""
+              aria-hidden="true"
+              width={400}
+              height={20}
+              className="pointer-events-none select-none w-[90%] h-auto mx-auto"
+              priority
+            />        
+          </div>
+          </div>
         <p
-          className="mt-[35px] sm:mt-10 md:mt-12 text-base sm:text-lg text-white/95"
+          className="mt-[35px] sm:mt-10 md:mt-12 text-base sm:text-lg md:text-xl lg:text-xxl text-white/95"
           style={{ textShadow: "0 1px 2px rgba(0,0,0,0.55)" }}
         >
           Hacker Olympics is an alternative competition stream designed for beginner hackers with little to no coding experience. Though we encourage everyone (even beginners) to try and develop a hack, we understand that it’s daunting to jump into a hackathon right away! Hacker Olympics is an alternative competition that beginner hackers can apply for. It is meant to develop coding skills and tech knowledge through the duration of SheHacks+.
@@ -74,7 +84,6 @@ export default function Olympics() {
           </div>
         </div>
       </div>
-
       {/* MOBILE: camera centered, not absolute (no cropping) */}
       <div className="sm:hidden mt-10 flex justify-center">
         <Image

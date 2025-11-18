@@ -27,10 +27,11 @@ export default function Landing() {
         </h3>
 
         <div className="mt-8 flex justify-center">
-        <div className="group" aria-label="Coming Soon!">
+        <div className="group" aria-label="applyButton!">
+          <Link href="https://tally.so/r/Xxljq4" target="_blank" rel="noopener noreferrer">
             <Image
-            src="/images/coming-soon-button.png"
-            alt="Coming Soon!"
+            src="/images/applyButton.png"
+            alt="Apply Now!"
             width={414}
             height={153}
             priority
@@ -44,6 +45,7 @@ export default function Landing() {
                 drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
             "
             />
+          </Link>
         </div>
         </div>
       </div>

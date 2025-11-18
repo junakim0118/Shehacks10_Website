@@ -26,24 +26,35 @@ export default function History() {
             className="pointer-events-none select-none absolute -left-[70px] top-[-8px] w-14 sm:w-16 h-auto"
             priority
           />
-          <h2 className="text-4xl sm:text-5xl font-semibold text-white">History of SheHacks+</h2>
+          <div className="inline-block text-center">
+            <h2 className="text-4xl sm:text-5xl font-semibold text-white">History of SheHacks+</h2>            
+            <Image
+              src="/images/HO_title_line.png"
+              alt=""
+              aria-hidden="true"
+              width={400}
+              height={20}
+              className="pointer-events-none select-none w-[90%] h-auto mx-auto"
+              priority
+            />        
+          </div>
         </div>
 
         <p
           className="mt-[35px] sm:mt-10 md:mt-12 text-base sm:text-lg text-white/95"
           style={{ textShadow: "0 1px 2px rgba(0,0,0,0.55)" }}
         >
-SheHacks+ traces its roots back over 7 years ago, emerging as a pioneering event aimed at tackling gender disparities in the tech industry head-on. Inspired by the growing recognition of underrepresentation and gender discrimination, the hackathon started as a grassroots initiative, driven by individuals deeply passionate about fostering diversity and inclusivity in technology.        </p>
+          SheHacks+ traces its roots back over 7 years ago, emerging as a pioneering event aimed at tackling gender disparities in the tech industry head-on. Inspired by the growing recognition of underrepresentation and gender discrimination, the hackathon started as a grassroots initiative, driven by individuals deeply passionate about fostering diversity and inclusivity in technology.        </p>
 
          <Image
-                    src="/images/historyShape.png"
-                    alt=""
-                    aria-hidden
-                    width={487*0.8}
-                    height={48*0.8}
-                    className="mt-6"
-                    priority
-                  />
+            src="/images/historyShape.png"
+            alt=""
+            aria-hidden
+            width={487*0.8}
+            height={48*0.8}
+            className="mt-6"
+            priority
+          />
       </div>
 
     </section>
