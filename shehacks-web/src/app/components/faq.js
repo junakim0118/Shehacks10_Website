@@ -17,7 +17,7 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
   const [open, setOpen] = useState(null);
 
   return (
-    <section id="faq" className="relative scroll-mt-28 py-16 sm:py-20 w-full">
+    <section id="faq" className="relative scroll-mt-28 py-5 sm:py-15 w-full">
       <h2 className="text-center font-semibold text-white"
           style={{ fontSize: "clamp(40px, 5vw, 50px)" }}>
         FAQ
@@ -32,7 +32,7 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
           priority
         />
       </div>
-
+    
       <div className="mx-auto mt-6 sm:mt-8 w-full max-w-3xl px-4">
         <ul className="divide-y divide-white/15">
           {items.map((item, i) => {
@@ -80,9 +80,7 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
             );
           })}
         </ul>
-      </div>
-
-      
+      </div>   
     </section>
   );
 }

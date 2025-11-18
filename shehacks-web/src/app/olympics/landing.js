@@ -48,10 +48,11 @@ export default function Landing() {
                     </div>
 
                     {/* Apply button - using the applyhacker.png as I couldn't find applynow.png*/}
-                    <div className="group" aria-label="Coming Soon!">
+                    <div className="group" aria-label="ApplyButton!">
+                          <Link href="https://tally.so/r/Xxljq4" target="_blank" rel="noopener noreferrer">
                                 <Image
-                                src="/images/coming-soon-button.png"
-                                alt="Coming Soon!"
+                                src="/images/applyButton.png"
+                                alt="Apply!"
                                 width={414}
                                 height={153}
                                 priority
@@ -65,6 +66,7 @@ export default function Landing() {
                                     drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
                                 "
                                 />
+                            </Link>
                             </div>
                 </div>
 
@@ -116,10 +118,11 @@ export default function Landing() {
 
                         {/* Apply button - same as above: using applyhacker.png for now */}
                          <div className="mt-8 flex justify-center">
-                        <div className="group" aria-label="Coming Soon!">
+                        <div className="group" aria-label="Apply Button!">
+                              <Link href="https://tally.so/r/Xxljq4" target="_blank" rel="noopener noreferrer">
                                     <Image
-                                    src="/images/coming-soon-button.png"
-                                    alt="Coming Soon!"
+                                    src="/images/applyButton.png"
+                                    alt="Apply Button!"
                                     width={414}
                                     height={153}
                                     priority
@@ -133,6 +136,7 @@ export default function Landing() {
                                         drop-shadow-[0_6px_14px_rgba(255,255,255,0.25)]
                                     "
                                     />
+                                </Link>
                                     </div>
                                 </div>
                     </div>
