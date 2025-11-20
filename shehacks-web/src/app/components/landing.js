@@ -9,7 +9,7 @@ export default function Landing() {
     >
 
       {/* Main content */}
-      <div className="-mt-[8vw] mx-auto max-w-5xl px-6 text-center text-white">
+      <div className="-mt-[6vw] mx-auto max-w-5xl px-6 text-center text-white">
         <Image
           src="/images/bigLogo.png"
           alt="SheHacks X Logo"
