@@ -49,7 +49,7 @@ export default function Landing() {
 
                     {/* Apply button - using the applyhacker.png as I couldn't find applynow.png*/}
                     <div className="group" aria-label="ApplyButton!">
-                          <Link href="https://tally.so/r/Xxljq4" target="_blank" rel="noopener noreferrer">
+                          <Link href="https://tally.so/r/rj5keX" target="_blank" rel="noopener noreferrer">
                                 <Image
                                 src="/images/applyButton.png"
                                 alt="Apply!"
