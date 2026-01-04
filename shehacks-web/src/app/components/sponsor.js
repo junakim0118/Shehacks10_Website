@@ -1,13 +1,38 @@
 import Image from "next/image";
 
+const floatingStyles = `
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+`;
+
 export default function Sponsor() {
+  // list of sponsor logos and their positions (percent values)
+  const logos = [
+    
+    { src: '/images/sponsors/cibc.png', alt: 'cibc', left: '29%', top: '41%', size: '9vw' },
+    { src: '/images/sponsors/td.png', alt: 'td', left: '65%', top: '18%', size: '12vw' },
+    { src: '/images/sponsors/otpp.png', alt: 'otpp', left: '78%', top: '49%', size: '10vw' },
+    { src: '/images/sponsors/ey.png', alt: 'ey', left: '58%', top: '65.5%', size: '7vw' },
+    { src: '/images/sponsors/cse.jpg', alt: 'cse', left: '37.5%', top: '60%', size: '7.5vw' },
+    { src: '/images/sponsors/rewritingthecode.png', alt: 'rtc', left: '74%', top: '64%', size: '9.5vw' },
+  ];
   return (
     <div className="flex flex-col items-center w-full">
+      <style>{floatingStyles}</style>
       {/* Sponsors section */}
       <section className="w-full flex flex-col justify-center mt-8 md:mt-12 lg:mt-16">
         <div>
           <h2 className="text-sm text-base sm:text-xl md:text-3xl lg:text-4xl font-bold text-center ">
-            This Year's Sponsors
+            This Year's Sponsors !!
           </h2>
         </div>
         <div className="relative w-full flex justify-center mt-12">
@@ -69,12 +94,29 @@ export default function Sponsor() {
                 priority
               />
             </div>
+
+            {/* Company logos placed on top of the sponsor image */}
+            {logos.map((logo, idx) => (
+              <div
+                key={idx}
+                className="absolute float-animation"
+                style={{ left: logo.left, top: logo.top, width: logo.size, boxShadow: '0 8px 5px rgba(0, 0, 0, 0.2)' }}
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div>
-          <h3 className="mt-8 -ml-20 text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold opacity-80 text-center">
-              Coming soon...
-          </h3>
+          
         </div>
       </section>
     </div>
