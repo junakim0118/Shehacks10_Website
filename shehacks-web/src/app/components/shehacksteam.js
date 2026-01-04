@@ -90,7 +90,7 @@ export default function SheHacksTeam() {
   if (isPaused) return; // don't rotate if paused
   const interval = setInterval(() => {
     goLeft();
-  }, 4000);
+  }, 2800);
   return () => clearInterval(interval);
 }, [isPaused]);
 

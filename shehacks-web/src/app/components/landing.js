@@ -9,7 +9,7 @@ export default function Landing() {
     >
 
       {/* Main content */}
-      <div className="-mt-[8vw] mx-auto max-w-5xl px-6 text-center text-white">
+      <div className="-mt-[6vw] mx-auto max-w-5xl px-6 text-center text-white">
         <Image
           src="/images/bigLogo.png"
           alt="SheHacks X Logo"
@@ -28,7 +28,7 @@ export default function Landing() {
 
         <div className="mt-8 flex justify-center">
         <div className="group" aria-label="applyButton!">
-          <Link href="https://tally.so/r/Xxljq4" target="_blank" rel="noopener noreferrer">
+          <Link href="https://tally.so/r/rj5keX" target="_blank" rel="noopener noreferrer">
             <Image
             src="/images/applyButton.png"
             alt="Apply Now!"
