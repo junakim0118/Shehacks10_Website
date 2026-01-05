@@ -18,12 +18,12 @@ export default function Sponsor() {
   // list of sponsor logos and their positions (percent values)
   const logos = [
     
-    { src: '/images/sponsors/cibc.png', alt: 'cibc', left: '29%', top: '41%', size: '9vw' },
-    { src: '/images/sponsors/td.png', alt: 'td', left: '65%', top: '18%', size: '12vw' },
-    { src: '/images/sponsors/otpp.png', alt: 'otpp', left: '78%', top: '49%', size: '10vw' },
-    { src: '/images/sponsors/ey.png', alt: 'ey', left: '58%', top: '65.5%', size: '7vw' },
-    { src: '/images/sponsors/cse.jpg', alt: 'cse', left: '37.5%', top: '60%', size: '7.5vw' },
-    { src: '/images/sponsors/rewritingthecode.png', alt: 'rtc', left: '74%', top: '64%', size: '9.5vw' },
+    { src: '/images/sponsors/cibc.png', alt: 'cibc', left: '29%', top: '41%', size: '9vw', url: 'https://www.cibc.com' },
+    { src: '/images/sponsors/td.png', alt: 'td', left: '65%', top: '18%', size: '12vw', url: 'https://www.td.com' },
+    { src: '/images/sponsors/otpp.png', alt: 'otpp', left: '78%', top: '49%', size: '10vw', url: 'https://www.otpp.com' },
+    { src: '/images/sponsors/ey.png', alt: 'ey', left: '58%', top: '65.5%', size: '7vw', url: 'https://www.ey.com' },
+    { src: '/images/sponsors/cse.jpg', alt: 'cse', left: '37.5%', top: '60%', size: '7.5vw', url: 'https://www.cse-cst.gc.ca/en' },
+    { src: '/images/sponsors/rewritingthecode.png', alt: 'rtc', left: '74%', top: '64%', size: '9.5vw', url: 'https://www.rewritingthecode.org' },
   ];
   return (
     <div className="flex flex-col items-center w-full">
@@ -97,8 +97,11 @@ export default function Sponsor() {
 
             {/* Company logos placed on top of the sponsor image */}
             {logos.map((logo, idx) => (
-              <div
+              <a
                 key={idx}
+                href={logo.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="absolute float-animation"
                 style={{ left: logo.left, top: logo.top, width: logo.size, boxShadow: '0 8px 5px rgba(0, 0, 0, 0.2)' }}
               >
@@ -111,7 +114,7 @@ export default function Sponsor() {
                     priority
                   />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
