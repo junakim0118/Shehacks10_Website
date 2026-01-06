@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const DEFAULT_ITEMS = [
   { q: "When are Hacker Applications?", a: "Hacker applications will be released in November, Keep an eye out on our Social media to be kept up to date with information on SheHacks+." },
-  { q: "What will be accommodated?", a: "The arrangements will include meals, comfortable sleeping accommodations, and travel reimbursements for those traveling a considerable distance to the venue." },
+  { q: "What will be accommodated?", a: "The arrangements will include meals, comfortable sleeping accommodations, and travel reimbursements case by case for those traveling a considerable distance to the venue." },
   { q: "Where will SheHacks+ take place?", a: "TBD — venue and address to be provided." },
   { q: "Does SheHacks+ cost anything?", a: "SheHacks is completely free, due to our generous sponsors! You will have access to a multitude of workshops and tools to help with your hack!" },
   { q: "Do I need to come with a team?", a: "You can come solo or with a team. If you already have a team of ( 3-4 people), you can register with them! If you don’t have a team there will be time before hacking to form teams or we can match you up with one before the event." },
