@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 
@@ -13,9 +13,34 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const[isVisible, setIsVisible] = useState(true);
+  const[lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect (() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      //show navbar if scrolling up or near the top
+      if (currentScrollY < 10 || currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+     //if scrolling down, hide navbar
+      else {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY)
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true});
+    return () => window.removeEventListener("scroll", handleScroll); 
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 text-black">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 text-black transition-transform duration-300 ease-in-out ${
+      isVisible ? "translate-y-0" : "-translate-y-full"
+    }`}>
 
       {/* CAUTION TAPE */}
       <div className="absolute top-0 left-0 w-full h-[clamp(20px,2.5vw,36px)] overflow-hidden select-none pointer-events-none">
@@ -32,7 +57,7 @@ export default function Navbar() {
       <nav className="w-full px-4 py-0 flex items-start justify-between">
         
         {/* LOGOS */}
-        <div className="relative flex items-start gap-1 m-0 p-0 shrink-0 ml-[clamp(9px,6.2vw,90px)] z-50">
+        <div className="relative flex items-start gap-1 m-0 p-0 shrink-0 z-50">
           <a
             id="mlh-trust-badge"
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
@@ -51,19 +76,19 @@ export default function Navbar() {
             className="mt-[clamp(7px,1.6vw,24px)] shrink-0"
             >
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="SheHacks"
                 width={132}
                 height={80}
-                className={`w-[clamp(60px,9.2vw,132px)] h-auto select-none pointer-events-none`}
+                className={`w-[clamp(50px,9.2vw,132px)] h-auto select-none pointer-events-none`}
                 priority
               />
             </a>
         </div>
 
-        {/* DESKTOP NAV (visible ≥ 400px) */}
-        <div className="hidden min-[400px]:flex flex-1 min-w-0 justify-center items-start mt-[clamp(20px,4.62vw,67px)] z-10">
-          <div className="relative flex items-center justify-center w-[clamp(400px,67vw,974px)] max-w-full">
+        {/* DESKTOP + MOBILE NAV */}
+        <div className="flex flex-1 min-w-0 justify-center items-start mt-[clamp(20px,4.62vw,67px)] z-10">
+          <div className="relative flex items-center justify-center w-[clamp(300px,67vw,974px)] max-w-full">
               
               {/* Yellow navline — sits right behind words */}
               <Image
@@ -78,7 +103,7 @@ export default function Navbar() {
               <div className="absolute inset-0 flex items-center justify-between px-[clamp(15px,3.8vw,55px)]">
               
                 {/* Left: Navigation links */}
-                <ul className="font-koulen flex items-center min-w-0 gap-[clamp(8px,2.7vw,40px)] text-[clamp(10px,1.37vw,20px)]">
+                <ul className="font-koulen flex items-center min-w-0 gap-[clamp(6px,2.7vw,40px)] text-[clamp(8px,1.37vw,20px)]">
                   {NAV_LINKS.map((i) => (
                     <li key={i.href} className="whitespace-nowrap">
                       <a
@@ -93,9 +118,9 @@ export default function Navbar() {
                 </ul>
                 
                 {/* Right: Social logos*/}
-                <div className="flex items-center gap-[clamp(16px,2.7vw,40px)]">
+                <div className="flex items-center gap-[clamp(8px,2.7vw,40px)]">
                   <a
-                    href="https://www.linkedin.com/company/shehacks/about/"
+                    href="https://www.linkedin.com"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -105,12 +130,12 @@ export default function Navbar() {
                       alt="Linkedin"
                       width={22}
                       height={22}
-                      className="w-[clamp(4px,1.5vw,22px)] h-auto"
+                      className="w-[clamp(11px,1.5vw,22px)] h-auto"
                     />
                   </a>
 
                   <a 
-                    href="https://www.instagram.com/wits.uwo/?hl=en"
+                    href="https://instagram.com"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -120,12 +145,12 @@ export default function Navbar() {
                       alt="Instagram" 
                       width={24} 
                       height={22}
-                      className="w-[clamp(14px,1.7vw,24px)] h-auto"
+                      className="w-[clamp(12px,1.7vw,24px)] h-auto"
                     />
                   </a>
 
                   <a 
-                    href="https://www.facebook.com/wits.uwo/"
+                    href="https://facebook.com"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -142,58 +167,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-
-        {/* HAMBURGER (visible < 400px) */}
-        <div className="block min-[400px]:hidden mt-[3vw]">
-          <button
-            aria-label="Open menu"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white/60"
-          >
-            <span className="sr-only">Menu</span>
-            <div className="space-y-1">
-              <span className="block h-0.5 w-5 bg-black" />
-              <span className="block h-0.5 w-5 bg-black" />
-              <span className="block h-0.5 w-5 bg-black" />
-            </div>
-          </button>
-        </div>
       </nav>
-      
-    
-      {open && (
-        <div 
-          className="fixed inset-0 z-40 bg-transparent min-[400px]:hidden"
-          onClick={() => setOpen(false)} 
-        />
-      )}
-      {/* MOBILE DROPDOWN (< 400px) */}
-      <div
-        id="mobile-menu"
-        onClick={() => setOpen(false)}
-        className={`min-[400px]:hidden fixed top-[clamp(56px,10vw,72px)] left-0 right-0 z-50 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } transition-opacity duration-200`}
-      >
-        <div className=" mx-4 rounded-xl border border-white/20 bg-black/80 backdrop-blur p-3">
-          <ul className="flex flex-col gap-2">
-            {NAV_LINKS.map((i) => (
-              <li key={i.href}>
-                <a
-                  href={i.href}
-                  onClick={() => setOpen(false)}
-                  style={{ fontFamily: "var(--font-koulen), sans-serif" }}
-                  className="block w-full rounded-lg px-3 py-2 uppercase tracking-wide text-white hover:bg-white/10"
-                >
-                  {i.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
     </header>
   );
 }
