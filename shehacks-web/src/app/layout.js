@@ -1,5 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Koulen } from "next/font/google";
 import "./globals.css";
+
+const koulen = Koulen({
+  weight: "400",
+  variable: "--font-koulen",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -8,6 +15,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const koulen = Koulen({
+  variable: "--font-koulen",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -20,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${koulen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
