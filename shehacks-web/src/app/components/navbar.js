@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 
@@ -13,34 +13,9 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const[isVisible, setIsVisible] = useState(true);
-  const[lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect (() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      //show navbar if scrolling up or near the top
-      if (currentScrollY < 10 || currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      }
-     //if scrolling down, hide navbar
-      else {
-        setIsVisible(false);
-      }
-
-      setLastScrollY(currentScrollY)
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true});
-    return () => window.removeEventListener("scroll", handleScroll); 
-  }, [lastScrollY]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 text-black transition-transform duration-300 ease-in-out ${
-      isVisible ? "translate-y-0" : "-translate-y-full"
-    }`}>
+    <header className="fixed top-0 left-0 w-full z-50 text-black">
 
       {/* CAUTION TAPE */}
       <div className="absolute top-0 left-0 w-full h-[clamp(20px,2.5vw,36px)] overflow-hidden select-none pointer-events-none">
@@ -64,7 +39,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Major League Hacking 2026 Hackathon Season"
-            className={`mt-0 shrink-0 w-[clamp(48px,7vw,96px)]`}
+            className={`mt-0 shrink-0 w-[clamp(35px,7vw,96px)]`}
           >
             <img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
@@ -76,11 +51,11 @@ export default function Navbar() {
             className="mt-[clamp(7px,1.6vw,24px)] shrink-0"
             >
               <Image
-                src="/images/logo.png"
+                src="/images/logo.svg"
                 alt="SheHacks"
                 width={132}
                 height={80}
-                className={`w-[clamp(66px,9.2vw,132px)] h-auto select-none pointer-events-none`}
+                className={`w-[clamp(60px,9.2vw,132px)] h-auto select-none pointer-events-none`}
                 priority
               />
             </a>
@@ -120,7 +95,7 @@ export default function Navbar() {
                 {/* Right: Social logos*/}
                 <div className="flex items-center gap-[clamp(16px,2.7vw,40px)]">
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/company/shehacks/about/"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -135,7 +110,7 @@ export default function Navbar() {
                   </a>
 
                   <a 
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/wits.uwo/?hl=en"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -150,7 +125,7 @@ export default function Navbar() {
                   </a>
 
                   <a 
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/wits.uwo/"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
@@ -175,33 +150,42 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white/60"
+            className="inline-flex items-center justify-center rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white/60"
           >
             <span className="sr-only">Menu</span>
             <div className="space-y-1">
-              <span className="block h-0.5 w-6 bg-black" />
-              <span className="block h-0.5 w-6 bg-black" />
-              <span className="block h-0.5 w-6 bg-black" />
+              <span className="block h-0.5 w-5 bg-black" />
+              <span className="block h-0.5 w-5 bg-black" />
+              <span className="block h-0.5 w-5 bg-black" />
             </div>
           </button>
         </div>
       </nav>
-
+      
+    
+      {open && (
+        <div 
+          className="fixed inset-0 z-40 bg-transparent min-[400px]:hidden"
+          onClick={() => setOpen(false)} 
+        />
+      )}
       {/* MOBILE DROPDOWN (< 400px) */}
       <div
         id="mobile-menu"
-        className={`min-[400px]:hidden fixed top-0 left-0 right-0 z-50 ${
+        onClick={() => setOpen(false)}
+        className={`min-[400px]:hidden fixed top-[clamp(56px,10vw,72px)] left-0 right-0 z-50 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } transition-opacity duration-200`}
       >
-        <div className="mt-[clamp(56px,10vw,72px)] mx-4 rounded-xl border border-white/20 bg-black/80 backdrop-blur p-3">
+        <div className=" mx-4 rounded-xl border border-white/20 bg-black/80 backdrop-blur p-3">
           <ul className="flex flex-col gap-2">
             {NAV_LINKS.map((i) => (
               <li key={i.href}>
                 <a
                   href={i.href}
                   onClick={() => setOpen(false)}
-                  className="block w-full rounded-lg px-3 py-2 uppercase tracking-wide hover:bg-white/10"
+                  style={{ fontFamily: "var(--font-koulen), sans-serif" }}
+                  className="block w-full rounded-lg px-3 py-2 uppercase tracking-wide text-white hover:bg-white/10"
                 >
                   {i.label}
                 </a>
