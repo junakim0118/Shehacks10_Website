@@ -11,6 +11,7 @@ import SheHacksTeam from "./components/shehacksteam";
 import History from "./components/history";
 import Wits from "./components/wits";
 import Sponsor from "./components/sponsor";
+import TeamCards from "./components/teamcards";
 import TickerTape from "./components/tickertape";
 
 export default function Home() {
@@ -78,14 +79,15 @@ export default function Home() {
       </div>
 
       </main>
-          <footer className="pb-5">
-          <section id="connect" className="scroll-mt-28">
-            <Connect />
-          </section>
-          
-          <section id="team" className="scroll-mt-28 py-24">
-            <SheHacksTeam />
-          </section>
+        <footer className="pb-5">
+        <section id="connect" className="scroll-mt-28">
+          <Connect />
+        </section>
+        
+        <TeamCards />
+        <section id="team" className="scroll-mt-28 py-24">
+          <SheHacksTeam />
+        </section>
 
 
           </footer>
