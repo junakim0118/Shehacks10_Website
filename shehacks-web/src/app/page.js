@@ -11,6 +11,7 @@ import SheHacksTeam from "./components/shehacksteam";
 import History from "./components/history";
 import Wits from "./components/wits";
 import Sponsor from "./components/sponsor";
+import TickerTape from "./components/tickertape";
 
 export default function Home() {
   return (
@@ -29,6 +30,19 @@ export default function Home() {
           <section id="sponsor" className="scroll-mt-28 py-24">
             <Sponsor/>
           </section>
+      <TickerTape />
+
+      <section id="about" className="scroll-mt-28 py-24">
+        
+      </section>
+
+        <section id="about" className="scroll-mt-28 py-24">
+          <About />
+        </section>
+        
+        <section id="sponsor" className="scroll-mt-28 py-24">
+          <Sponsor/>
+        </section>
 
           <div className="scroll-mt-28 py-24">
             <Winners /> {/* has id="winners" inside */}
