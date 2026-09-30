@@ -59,62 +59,121 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
   const [open, setOpen] = useState(null);
 
   return (
-    <section
-      id="faq"
-      aria-labelledby="faq-heading"
-      className="relative isolate scroll-mt-28 -mx-8 overflow-hidden pt-[clamp(260px,65vw,650px)] px-6 pb-[115px] sm:-mx-20 sm:px-[9%] sm:pb-[170px]"
-    >
-      <div className="relative w-full max-w-[1000px] mx-auto [container-type:inline-size]">
-        <Artwork
-          name="footprints"
-          className="top-[-65cqw] left-[10%] w-[82%] h-auto aspect-[26.5/46.5] transform-none z-0 opacity-60 [clip-path:inset(0_0_calc(100%_-_65cqw)_0)]"
+    <section id="faq" className="relative scroll-mt-28 w-full flex justify-center px-4 overflow-visible -mt-6 sm:mt-0">
+      
+      {/* FAQ PAPER CONTAINER */}
+      <div className="relative w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl aspect-[1244/1270]">
+        <Image
+          src="/images/FAQ-paper.png"
+          alt="FAQ paper background"
+          fill
+          className="object-contain object-top drop-shadow-xl"
         />
 
-        <div className="relative isolate w-full min-h-[660px] pt-[82px] px-[6%] pb-[145px] text-[#35332f] sm:min-h-[850px] sm:pt-[120px] sm:pb-[230px]">
-          <Artwork name="paper" className="z-0 inset-0" />
+        {/* INVISIBLE FOOTPRINTS */}
+          <div
+            className="absolute top-0 right-[10%] z-0 pointer-events-none "
+            style={{
+              width: "calc(var(--footprint-unit) * 9)",
+              transform: "translateY(-31%)",
+              mixBlendMode: "multiply"
+            }}
+          >
+          <Image
+            src="/images/footsteps 2.png"
+            alt="Footprints background graphic"
+            width={268}
+            height={658}
+            className="w-full h-auto"
+          />
+        </div>
+        
+        <div
+          className="absolute top-[40%] left-[10%] pointer-events-none z-20"
+          style={{width: "calc(var(--footprint-unit) * 9)"}}
+        >
+          <Image
+            src="/images/footsteps 3.png"
+            alt="Footprints background graphic"
+            width={268}
+            height={658}
+            className="w-full h-auto"
+          />
+        </div>
 
-          <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" aria-hidden="true">
-            <Artwork
-              name="footprints"
-              className="top-[-65cqw] left-[10%] w-[82%] h-auto aspect-[26.5/46.5] transform-none z-0 opacity-60"
-            />
-          </div>
+        {/* RED FAQ HEADER */}
+        <div className="relative -top-[5%] left-[7%] w-[clamp(100px,35%,555px)] z-20">
+          <Image
+            src="/images/FAQ.png"
+            alt="FAQ title"
+            width={555}
+            height={202}
+            className="w-full h-auto"
+          />
+          <span 
+            style={{ fontFamily: "var(--font-koulen)" }}
+            className="absolute inset-0 z-30 flex items-center justify-center text-white text-[clamp(25px,6vw,85px)] tracking-wider"
+          >
+            FAQ
+          </span>     
+        </div>
 
-          <div className="absolute top-[-34px] left-[5%] grid place-items-center w-[58%] h-[88px] [transform:rotate(0.5deg)] z-[2] sm:top-[-56px] sm:left-[5.5%] sm:w-[44%] sm:h-[145px]">
-            <Artwork name="label" className="inset-0" />
-            <h2 id="faq-heading" className="relative m-0 text-[#fff7e9] [font-family:Xilla,sans-serif] text-[clamp(48px,7vw,76px)] font-bold leading-none">
-              FAQ
-            </h2>
-          </div>
+        {/* 11 CARDS */}
+        <div 
+          className="hidden sm:block absolute -bottom-30 w-[clamp(140px,20vw,378px)] aspect-square pointer-events-none z-20 overflow-visible"         
+          style={{ right: "calc(50% - 50vw)" }}
+        >
+          <Image
+            src="/images/Cards-FAQ.png"
+            alt="Playing cards"
+            width={378}
+            height={623}
+            className="w-full h-auto"
+          />
+        </div>
 
-          <ul className="relative z-[2] m-0 p-0 list-none">
+        {/* QUESTIONS */}
+        <div className="absolute inset-0 @container">
+        <div 
+          className="h-full pt-[10%] sm:pt-[15%] px-[10%] pb-[8%] overflow-y-auto"
+          style={{ fontFamily: "var(--font-sometype-mono)" }}
+        >
+          <ul className="divide-y divide-neutral-400/50">
             {items.map((item, i) => {
               const isOpen = open === i;
-
               return (
-                <li key={item.q} className="border-b border-[rgb(68_62_53/50%)]">
+                <li key={i} className="py-3 sm:py-3.5">
                   <button
-                    type="button"
-                    id={`faq-question-${i}`}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${i}`}
-                    className="flex items-center justify-between gap-3 w-full min-h-[56px] py-3 px-[5px] border-0 border-none bg-transparent text-inherit text-left [font-family:Inconsolata,monospace] text-[16px] font-normal leading-[1.4] cursor-pointer hover:bg-[rgb(104_68_50/5%)] focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-[#852d23] focus-visible:outline-offset-4 sm:gap-5 sm:min-h-[60px] sm:py-[14px] sm:px-6 sm:text-[clamp(16px,1.8vw,21px)]"
                     onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    className="group w-full flex items-center justify-between gap-4 text-left focus:outline-none"
                   >
-                    <span>{item.q}</span>
+                    <span className="text-neutral-900 font-medium text-[clamp(8px,2cqw,18px)] leading-relaxed">
+                      {item.q}
+                    </span>
 
-                    <span className="shrink-0 text-[28px] font-normal leading-none" aria-hidden="true">
-                      {isOpen ? "−" : "+"}
+                    {/* PLUS / MINUS ICONS */}
+                    <span className="relative inline-flex h-4 w-4 items-center justify-center shrink-0" aria-hidden="true">
+                      <span className="absolute h-[2px] w-3.5 bg-neutral-800 transition-opacity duration-200" />
+                      <span
+                        className={`absolute h-3.5 w-[2px] bg-neutral-800 transition-transform duration-200 ${
+                          isOpen ? "scale-y-0" : "scale-y-100"
+                        }`}
+                      />
                     </span>
                   </button>
 
+                  {/* ANSWERS */}
                   <div
-                    id={`faq-answer-${i}`}
-                    aria-labelledby={`faq-question-${i}`}
-                    hidden={!isOpen}
-                    className="pt-0 px-[5px] pb-4 sm:px-6 sm:pb-5"
+                    className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
                   >
-                    <p className="m-0 [font-family:Inconsolata,monospace] text-[clamp(16px,1.6vw,19px)] leading-[1.6]">{item.a}</p>
+                    <div className="overflow-hidden">
+                      <p className="pt-2 text-neutral-700 text-[clamp(8px,1.8cqw,14px)] leading-relaxed">
+                        {item.a}
+                      </p>
+                    </div>
                   </div>
                 </li>
               );
