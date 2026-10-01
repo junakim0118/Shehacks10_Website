@@ -17,12 +17,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const koulen = Koulen({
-  variable: "--font-koulen",
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
 const londrina = Londrina_Solid({
   variable: "--font-londrina",
   weight: ["400"],
