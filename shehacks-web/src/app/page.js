@@ -13,6 +13,7 @@ import Wits from "./components/wits";
 import Sponsor from "./components/sponsor";
 import TeamCards from "./components/teamcards";
 import TickerTape from "./components/tickertape";
+import FlyAways from "./components/flyaways";
 
 export default function Home() {
   return (
@@ -60,6 +61,8 @@ export default function Home() {
           className="w-full mx-auto bg-no-repeat bg-top bg-contain aspect-[1255/2003] relative"
           style={{ backgroundImage: "url('/images/pink-back.png')" }}
         >
+            <FlyAways/>
+          
             {/* Content sitting on blueprint */}
             <div className="w-full mt-[8%] sm:mt-[10%]">
               
