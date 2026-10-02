@@ -5,7 +5,7 @@ import HowHOWorks from './howHOworks.js';
 import HOWinners from './ho-winners';
 import HOFaq from './ho-faq';
 import HOAbout from './ho-about';
-
+import Navbar from './navbar.js';
 const CANVAS_WIDTH = 1440;
 const CANVAS_A_HEIGHT = 2576; // HowHOWorks
 const CANVAS_B_HEIGHT = 2490; // HOFaq + HOAbout
@@ -56,6 +56,7 @@ export default function HackerOlympicsPage() {
   return (
     <div style={{ position: 'relative' }}>
       {/* Black landing overlay — covers the real viewport, independent of any section's own scaling */}
+      <Navbar/>
       <div
         style={{
           position: 'fixed',
@@ -76,7 +77,9 @@ export default function HackerOlympicsPage() {
       <HOWinners />
 
       <ScaledCanvas height={CANVAS_B_HEIGHT}>
-        <HOFaq />
+        <section id="ho-about">
+          <HOFaq />
+        </section>
         <HOAbout />
       </ScaledCanvas>
     </div>
