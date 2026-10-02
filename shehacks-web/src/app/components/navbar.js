@@ -135,7 +135,7 @@ export default function Navbar() {
                   </a>
 
                   <a 
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/wits.uwo/"
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:opacity-70 transition-opacity"
