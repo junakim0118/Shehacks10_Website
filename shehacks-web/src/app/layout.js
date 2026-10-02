@@ -2,12 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Koulen } from "next/font/google";
 import "./globals.css";
 
-const koulen = Koulen({
-  weight: "400",
-  variable: "--font-koulen",
-  subsets: ["latin"],
-});
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
