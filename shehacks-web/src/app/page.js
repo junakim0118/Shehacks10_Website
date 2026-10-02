@@ -22,47 +22,40 @@ export default function Home() {
 
       <main className="px-8 sm:px-20 pb-20">
         <Landing />
-
-      <TickerTape />
-
+        <div className="scroll-mt-28 py-24">
+          <Winners /> {/* has id="winners" inside */}
+        </div>
+                <div className="scroll-mt-28 py-24">
+          <History /> {/* has id="history" inside */}
+        </div>
       <section id="about" className="scroll-mt-28 py-24">
-        
+        <TickerTape />
       </section>
-
+{/* 
         <section id="about" className="scroll-mt-28 py-24">
           <About />
-        </section>
+        </section> */}
         
         <section id="sponsor" className="scroll-mt-28 py-24">
           <Sponsor/>
         </section>
-
-        <div className="scroll-mt-28 py-24">
-          <Winners /> {/* has id="winners" inside */}
-        </div>
+        <section id="olympics" className="scroll-mt-28 py-24">
+          <Olympics /> {/* has id="olympics" inside */}
+        </section>
         
-        <Olympics /> {/* has id="olympics" inside */}
-        
-        <div className="scroll-mt-28 py-24">
-          <History /> {/* has id="history" inside */}
-        </div>
-        <Wits /> {/* has id="wits" inside */}
+        <section id="wits" className="scroll-mt-28 py-24">
+          <Wits /> {/* has id="wits" inside */}
+        </section>
         <section id="faq" className="scroll-mt-28 pt-15">
           <Faq />
         </section>               
-
-      </main>
-        <footer className="pb-5">
-        <section id="connect" className="scroll-mt-28">
-          <Connect />
-        </section>
-        
         <section id="team" className="scroll-mt-28 py-24">
           <SheHacksTeam />
         </section>
+      </main>
+        
 
 
-        </footer>
       
     </div>
   );
