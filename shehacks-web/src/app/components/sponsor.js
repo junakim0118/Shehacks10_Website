@@ -30,6 +30,7 @@ const sponsors = [
   },
 ];
 
+// the order which the cards should leave the deck
 const dealPositions = [
   "topRight",
   "middle",
@@ -40,44 +41,46 @@ const dealPositions = [
 ];
 
 function SponsorCard({
-                       sponsor,
-                       index,
-                       isDealt,
-                       isActive,
-                       position,
-                       onFlip,
-                     }) {
+  sponsor,
+  index,
+  isDealt,
+  isActive,
+  position,
+  onFlip,
+}) {
   return (
-      <div
-          className={`
+    <div
+      className={`
         ${styles.card}
         ${isDealt ? styles.dealt : styles.deckCard}
         ${isDealt ? styles[position] : ""}
         ${isActive ? styles.activeCard : ""}
       `}
-          style={{ "--card-index": index }}
-          onMouseEnter={isActive ? onFlip : undefined}
-      >
-        <div className={styles.cardInner}>
-          <div className={`${styles.cardFace} ${styles.cardBack}`}>
-            <img
-                src="/images/sponsors/card-back.png"
-                alt="SheHacks sponsor card back"
-            />
-          </div>
-
-          <div className={`${styles.cardFace} ${styles.cardFront}`}>
-            <img
-                src={sponsor.card}
-                alt={`${sponsor.name} sponsor card`}
-            />
-          </div>
+      style={{ "--card-index": index }}
+      onMouseEnter={isActive ? onFlip : undefined}
+    >
+      <div className={styles.cardInner}>
+        <div className={`${styles.cardFace} ${styles.cardBack}`}>
+          <img
+            src="/images/sponsors/card-back.png"
+            alt="SheHacks sponsor card back"
+          />
         </div>
+        <div className={`${styles.cardFace} ${styles.cardFront}`}>
+          <img
+            src={sponsor.card}
+            alt={`${sponsor.name} sponsor card`}
+          />
+        </div>
+
       </div>
+    </div>
   );
 }
 
 export default function Sponsor() {
+
+  // how many cards have actually been dealt out of the deck
   const [dealtCount, setDealtCount] = useState(0);
 
   const handleFlip = () => {
@@ -87,64 +90,72 @@ export default function Sponsor() {
   };
 
   return (
-      <section className={styles.sponsorsSection}>
-        <div className={styles.sponsorContent}>
-          <div className={styles.cardsRow}>
-            <div className={styles.cardDeck}>
-              {sponsors.map((sponsor, index) => {
-                const topCardIndex =
-                    sponsors.length - 1 - dealtCount;
+    <section className={styles.sponsorsSection}>
+      <div className={styles.sponsorContent}>
 
-                const isActive =
-                    index === topCardIndex;
+        <div className={styles.cardsRow}>
 
-                const isDealt =
-                    index > topCardIndex;
+          <div className={styles.cardDeck}>
 
-                const dealNumber =
-                    sponsors.length - 1 - index;
+            {sponsors.map((sponsor, index) => {
 
-                const position =
-                    dealPositions[dealNumber];
+              const topCardIndex =
+                sponsors.length - 1 - dealtCount;
 
-                return (
-                    <SponsorCard
-                        key={sponsor.name}
-                        sponsor={sponsor}
-                        index={index}
-                        isDealt={isDealt}
-                        isActive={isActive}
-                        position={position}
-                        onFlip={handleFlip}
-                    />
-                );
-              })}
-            </div>
+                // the card is currently on the top of the deck and can be hovered
+              const isActive =
+                index === topCardIndex;
 
-            <button
-                className={styles.previousSponsors}
-                type="button"
-            >
-              <img
-                  src="/images/sponsors/previoussponsors-card.png"
-                  alt="Previous sponsors"
-              />
-            </button>
+             // cards above the current top card have already been dealt
+              const isDealt =
+                index > topCardIndex;
+
+             // where the card should go after its being dealt
+              const dealNumber =
+                sponsors.length - 1 - index;
+
+              const position =
+                dealPositions[dealNumber];
+
+              return (
+                <SponsorCard
+                  key={sponsor.name}
+                  sponsor={sponsor}
+                  index={index}
+                  isDealt={isDealt}
+                  isActive={isActive}
+                  position={position}
+                  onFlip={handleFlip}
+                />
+              );
+            })}
+
           </div>
+          <button
+            className={styles.previousSponsors}
+            type="button"
+          >
+            <img
+              src="/images/sponsors/previoussponsors-card.png"
+              alt="Previous sponsors"
+            />
+          </button>
 
-          <div className={styles.sponsorCTA}>
-            <div className={styles.sponsorCTARow}>
-              <h2>BECOME OUR SPONSOR</h2>
-
-              <a
-                  className={styles.sponsorButton}
-                  href="#sponsor-form"
-              >
-                HERE
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+
+
+        <div className={styles.sponsorCTA}>
+          <h2>BECOME OUR SPONSOR</h2>
+
+          <a
+            className={styles.sponsorButton}
+            href="#sponsor-form"
+          >
+            HERE
+          </a>
+        </div>
+            
+      </div>
+    </section>
   );
 }
