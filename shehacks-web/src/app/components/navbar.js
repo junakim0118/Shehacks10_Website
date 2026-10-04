@@ -6,9 +6,10 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "ABOUT", href: "#about" },
   { label: "SPONSOR", href: "#sponsor" },
-  { label: "HACKER OLYMPICS", href: "#hacker-olympics" },
+  { label: "OLYMPICS", href: "#olympics" },
+  { label: "COMMUNITY", href: "#community" },
+  { label: "GALLERY", href: "/gallery" },
   { label: "FAQ", href: "#faq" },
-  { label: "GALLERY", href: "#gallery" },
 ];
 
 export default function Navbar() {
@@ -57,14 +58,14 @@ export default function Navbar() {
       <nav className="w-full px-4 py-0 flex items-start justify-between">
         
         {/* LOGOS */}
-        <div className="relative flex items-start gap-1 m-0 p-0 shrink-0 ml-[clamp(9px,6.2vw,90px)] z-50">
+        <div className="relative flex items-start gap-1 m-0 p-0 shrink-0 z-50">
           <a
             id="mlh-trust-badge"
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Major League Hacking 2026 Hackathon Season"
-            className={`mt-0 shrink-0 w-[clamp(48px,7vw,96px)]`}
+            className={`mt-0 shrink-0 w-[clamp(35px,7vw,96px)]`}
           >
             <img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
@@ -80,15 +81,15 @@ export default function Navbar() {
                 alt="SheHacks"
                 width={132}
                 height={80}
-                className={`w-[clamp(66px,9.2vw,132px)] h-auto select-none pointer-events-none`}
+                className={`w-[clamp(50px,9.2vw,132px)] h-auto select-none pointer-events-none`}
                 priority
               />
             </a>
         </div>
 
-        {/* DESKTOP NAV (visible ≥ 400px) */}
-        <div className="hidden min-[400px]:flex flex-1 min-w-0 justify-center items-start mt-[clamp(20px,4.62vw,67px)] z-10">
-          <div className="relative flex items-center justify-center w-[clamp(400px,67vw,974px)] max-w-full">
+        {/* DESKTOP + MOBILE NAV */}
+        <div className="flex flex-1 min-w-0 justify-center items-start mt-[clamp(20px,4.62vw,67px)] z-10">
+          <div className="relative flex items-center justify-center w-[clamp(300px,67vw,974px)] max-w-full">
               
               {/* Yellow navline — sits right behind words */}
               <Image
@@ -103,7 +104,7 @@ export default function Navbar() {
               <div className="absolute inset-0 flex items-center justify-between px-[clamp(15px,3.8vw,55px)]">
               
                 {/* Left: Navigation links */}
-                <ul className="font-koulen flex items-center min-w-0 gap-[clamp(8px,2.7vw,40px)] text-[clamp(10px,1.37vw,20px)]">
+                <ul className="font-koulen flex items-center min-w-0 gap-[clamp(6px,2.7vw,40px)] text-[clamp(8px,1.37vw,20px)]">
                   {NAV_LINKS.map((i) => (
                     <li key={i.href} className="whitespace-nowrap">
                       <a
@@ -118,7 +119,7 @@ export default function Navbar() {
                 </ul>
                 
                 {/* Right: Social logos*/}
-                <div className="flex items-center gap-[clamp(16px,2.7vw,40px)]">
+                <div className="flex items-center gap-[clamp(8px,2.7vw,40px)]">
                   <a
                     href="https://www.linkedin.com"
                     target="_blank" 
@@ -130,7 +131,7 @@ export default function Navbar() {
                       alt="Linkedin"
                       width={22}
                       height={22}
-                      className="w-[clamp(4px,1.5vw,22px)] h-auto"
+                      className="w-[clamp(11px,1.5vw,22px)] h-auto"
                     />
                   </a>
 
@@ -145,7 +146,7 @@ export default function Navbar() {
                       alt="Instagram" 
                       width={24} 
                       height={22}
-                      className="w-[clamp(14px,1.7vw,24px)] h-auto"
+                      className="w-[clamp(12px,1.7vw,24px)] h-auto"
                     />
                   </a>
 
@@ -167,49 +168,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-
-        {/* HAMBURGER (visible < 400px) */}
-        <div className="block min-[400px]:hidden mt-[3vw]">
-          <button
-            aria-label="Open menu"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white/60"
-          >
-            <span className="sr-only">Menu</span>
-            <div className="space-y-1">
-              <span className="block h-0.5 w-6 bg-black" />
-              <span className="block h-0.5 w-6 bg-black" />
-              <span className="block h-0.5 w-6 bg-black" />
-            </div>
-          </button>
-        </div>
       </nav>
-
-      {/* MOBILE DROPDOWN (< 400px) */}
-      <div
-        id="mobile-menu"
-        className={`min-[400px]:hidden fixed top-0 left-0 right-0 z-50 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } transition-opacity duration-200`}
-      >
-        <div className="mt-[clamp(56px,10vw,72px)] mx-4 rounded-xl border border-white/20 bg-black/80 backdrop-blur p-3">
-          <ul className="flex flex-col gap-2">
-            {NAV_LINKS.map((i) => (
-              <li key={i.href}>
-                <a
-                  href={i.href}
-                  onClick={() => setOpen(false)}
-                  className="block w-full rounded-lg px-3 py-2 uppercase tracking-wide hover:bg-white/10"
-                >
-                  {i.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
     </header>
   );
 }
