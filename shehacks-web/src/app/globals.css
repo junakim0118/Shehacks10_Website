@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,6 +11,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-koulen: var(--font-koulen);
+  --font-londrina: var(--font-londrina);
+  --font-sometype: var(--font-sometype);
+  --font-newsreader: var(--font-newsreader);
+  --font-lobster: var(--font-lobster);
+  --font-inconsolata: var(--font-inconsolata);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,13 +47,6 @@
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6, a, strong {
-  font-family: 'Xilla', sans-serif;
-}
-
-body, p, li, span {
-  font-family: 'Inconsolata', monospace;
-}
 
 body {
   background: var(--background);
@@ -86,3 +86,45 @@ html, body {
 .team-viewport { overflow: hidden; }
 .team-track { display:flex; gap: 40px; transition: transform 600ms ease-in-out; }
 .team-track.no-anim { transition: none; } /* used when we instantly reset after a step */
+
+@keyframes tape-scroll {
+  from { background-position-x: 0px; }
+  to   { background-position-x: -70px; }
+}
+
+@keyframes tape-scroll-sm {
+  from { background-position-x: 0px; }
+  to   { background-position-x: -35px; }
+}
+
+@keyframes title-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.tape-stripes {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #000000 0 24.75px,
+    #F8C650  24.75px 49.5px
+  );
+  animation: tape-scroll 1.4s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .tape-stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      #000000 0 12.375px,
+      #F8C650  12.375px 24.75px
+    );
+    animation: tape-scroll-sm 0.7s linear infinite;
+  }
+}
+
+.animate-title {
+  animation: title-scroll 25s linear infinite;
+}
+html, body {
+  cursor: url('/images/magnifying-glass-cursor.png') 20 20, auto;
+}
