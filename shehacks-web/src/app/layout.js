@@ -1,15 +1,11 @@
-import {
-  Geist,
-  Geist_Mono,
-  Koulen,
-  Londrina_Solid,
-  Sometype_Mono,
-  Newsreader,
-  Inconsolata,
-  Lobster,
-} from "next/font/google";
-
+import { Geist, Geist_Mono, Koulen, Londrina_Solid, Sometype_Mono, Newsreader, Inconsolata, Lobster} from "next/font/google";
 import "./globals.css";
+
+const koulen = Koulen({
+  weight: "400",
+  variable: "--font-koulen",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,9 +48,9 @@ const inconsolata = Inconsolata({
 });
 
 const lobster = Lobster({
-  variable: "--font-lobster",
-  weight: ["400"],
-  subsets: ["latin"],
+  variable: "--font-lobster", 
+  weight: ["400"], 
+  subsets: ['latin'], 
 });
 
 export const metadata = {
@@ -64,12 +60,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-      <html lang="en">
+    <html lang="en">
       <body
-          className={`${geistSans.variable} ${geistMono.variable} ${koulen.variable} ${londrina.variable} ${sometype.variable} ${newsreader.variable} ${inconsolata.variable} ${lobster.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${koulen.variable} ${londrina.variable} ${sometype.variable} ${newsreader.variable} ${inconsolata.variable} ${lobster.variable} antialiased`}
       >
-      {children}
+        {children}
       </body>
-      </html>
+    </html>
   );
 }
