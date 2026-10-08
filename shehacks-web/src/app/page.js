@@ -7,7 +7,7 @@ export default function Home() {
                 flex
                 items-center
                 justify-center
-                bg-[url('/images/background_main.png')]
+                bg-[url('/images/Wooden-Background.png')]
                 bg-cover
                 bg-center
                 bg-no-repeat
@@ -20,13 +20,13 @@ export default function Home() {
 
                 <h1
                     className="
-                        text-white
+                        text-[#8f1d1d]
                         text-[52px]
                         sm:text-[72px]
                         md:text-[90px]
                         lg:text-[110px]
                         leading-none
-                        drop-shadow-[0_6px_6px_rgba(0,0,0,0.35)]
+                        drop-shadow-[0_5px_3px_rgba(0,0,0,0.28)]
                     "
                     style={{
                         fontFamily: "var(--font-koulen)",
@@ -38,10 +38,11 @@ export default function Home() {
                 <p
                     className="
                         mt-4
-                        text-white
+                        text-[#f3dfb3]
                         text-base
                         sm:text-lg
                         md:text-xl
+                        drop-shadow-[0_2px_2px_rgba(0,0,0,0.35)]
                     "
                     style={{
                         fontFamily: "var(--font-sometype)",
