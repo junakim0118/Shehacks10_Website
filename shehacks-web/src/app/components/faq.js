@@ -73,12 +73,39 @@ export default function Faq({ items = DEFAULT_ITEMS }) {
   const [open, setOpen] = useState(null);
 
   return (
-      <section
-          id="faq"
-          className="relative scroll-mt-28 w-full flex justify-center px-4 overflow-visible -mt-6 sm:mt-0"
-      >
-        {/* FAQ PAPER CONTAINER */}
-        <div className="relative w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl aspect-[1244/1270]">
+    <section id="faq" className="relative scroll-mt-28 w-full flex justify-center px-4 overflow-visible -mt-6 sm:mt-0">
+      
+      {/* FAQ PAPER CONTAINER */}
+      <div className="relative w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl aspect-[1244/1270]">
+        <Image
+          src="/images/FAQ-paper.png"
+          alt="FAQ paper background"
+          fill
+          className="object-contain object-top drop-shadow-xl"
+        />
+         </div>
+        {/* INVISIBLE FOOTPRINTS */}
+          <div
+            className="absolute top-0 right-[10%] z-0 pointer-events-none "
+            style={{
+              width: "calc(var(--footprint-unit) * 9)",
+              transform: "translateY(-31%)",
+              mixBlendMode: "multiply"
+            }}
+          >
+          <Image
+            src="/images/footsteps 2.png"
+            alt="Footprints background graphic"
+            width={268}
+            height={658}
+            className="w-full h-auto"
+          />
+        </div>
+        
+        <div
+          className="absolute top-[40%] left-[10%] pointer-events-none z-20"
+          style={{width: "calc(var(--footprint-unit) * 9)"}}
+        >
           <Image
               src="/images/FAQ-paper.png"
               alt="FAQ paper background"
